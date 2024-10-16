@@ -25,6 +25,7 @@ $(function(){
             return false;
         }else{
 
+            var id_utilizador = $('input[name=id_utilizador]').val();
             var nome = $('input[name=nome]').val();
             var n_colaborador = $('input[name=n_colaborador]').val();
             var ccustos = $('input[name=ccustos]').val();
@@ -35,6 +36,7 @@ $(function(){
             var estado = 1;
 
             post_data = {
+                'id_utilizador': id_utilizador,
                 'nome': nome,
                 'n_colaborador': n_colaborador,
                 'ccustos': ccustos,

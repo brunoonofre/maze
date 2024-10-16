@@ -61,8 +61,9 @@
                 <span class="input-group-text" id="quantidade">Quantidade</span>
                 <input type="number" name="quantidade" class="form-control" aria-label="Quantidade" aria-describedby="quantidade">
             </div>
+            <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id'];?>">
             <p class="lead" style="text-align:center">
-                <button id="addbatabtn" style="text-align:center" type="button" class="btn btn-primary">Adicionar linha</button>
+                <button id="addbatabtn" style="text-align:center" type="button" class="btn btn-primary">Pedir bata</button>
             </p>
         </div>
     </div>
