@@ -50,11 +50,11 @@
                 <span class="input-group-text" for="cor">Cor</span>
                 <select class="form-select" aria-label="Cor" name="cor" id="cor">
                     <option selected value="" style='display:none;'>Escolha a cor</option>
-                    <option value="branco">Branco (Geral)</option>
-                    <option value="azulclaro">Azul Claro (Line-Leader)</option>
-                    <option value="azulescuro">Azul Escuro (Logistica)</option>
-                    <option value="verde">Verde (Cat)</option>
-                    <option value="cinzento">Cinzento (Manutenção Mecânica)</option>
+                    <option value="Branco">Branco (Geral)</option>
+                    <option value="Azulclaro">Azul Claro (Line-Leader)</option>
+                    <option value="Azulescuro">Azul Escuro (Logistica)</option>
+                    <option value="Verde">Verde (Cat)</option>
+                    <option value="Cinzento">Cinzento (Manutenção Mecânica)</option>
                 </select>
             </div>
             <div class="input-group">
