@@ -13,8 +13,9 @@
     $cor = filter_input(INPUT_POST, 'cor', FILTER_DEFAULT);
     $quantidade = filter_input(INPUT_POST, 'quantidade', FILTER_SANITIZE_NUMBER_INT);
     $estado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_NUMBER_INT);
+    $data = date("Y/m/d");
     
-    $submit = $mysqli->query("INSERT INTO batas (nome, n_colaborador, centro_custos, departamento, tamanho, cor, quantidade, estado) VALUES ('$nome','$n_colaborador','$ccustos','$departamento','$tamanho','$cor','$quantidade','$estado')"); 
+    $submit = $mysqli->query("INSERT INTO batas (nome, n_colaborador, centro_custos, departamento, tamanho, cor, quantidade, estado, data) VALUES ('$nome','$n_colaborador','$ccustos','$departamento','$tamanho','$cor','$quantidade','$estado','$data')"); 
 
     if($submit){
         $output = json_encode(array('success' => true, 'text' => 'Bata pedida com sucesso!'));
