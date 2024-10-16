@@ -33,17 +33,17 @@
                 <span class="input-group-text" for="tamanho">Tamanho</span>
                 <select class="form-select" aria-label="Tamanho" name="tamanho" id="tamanho">
                     <option selected value="" style='display:none;'>Escolha o tamanho</option>
-                    <option value="xxs">XXS</option>
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                    <option value="xxl">XXL</option>
-                    <option value="3xl">3XL</option>
-                    <option value="4xl">4XL</option>
-                    <option value="5xl">5XL</option>
-                    <option value="6xl">6XL</option>
+                    <option value="XXS">XXS</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="3XL">3XL</option>
+                    <option value="4XL">4XL</option>
+                    <option value="5XL">5XL</option>
+                    <option value="6XL">6XL</option>
                 </select>
             </div>
             <div class="input-group">
