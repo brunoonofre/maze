@@ -1,12 +1,12 @@
 $(function(){
     
     $("td:not(.delete)").click(function(){
-            var id_pedido = this.id;
-            var url = 'pedidoview';
-            var form = $('<form action="' + url + '" method="post"><input type="hidden" name="id_pedido" value="' + id_pedido + '" /></form>');
-            $('body').append(form);
-            form.submit();
-        });
+        var id_pedido = this.id;
+        var url = 'pedidoview';
+        var form = $('<form action="' + url + '" method="post"><input type="hidden" name="id_pedido" value="' + id_pedido + '" /></form>');
+        $('body').append(form);
+        form.submit();
+    });
     
 
     $("span.delete").click(function(){

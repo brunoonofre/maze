@@ -119,7 +119,10 @@
                     case 'addbatas':
                         include 'add_batas.php';
                         break;
-                }
+                    case 'bataview':
+                        include 'bata_view.php';
+                        break;    
+                    }
             ?>
         </section>
     </body>

@@ -14,7 +14,7 @@
                 <strong id="error"></strong>
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="nome">Nome</span>
+                <span class="input-group-text" id="nome">Nome na bata</span>
                 <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome">
             </div>
             <div class="input-group">
@@ -22,7 +22,7 @@
                 <input type="number" name="n_colaborador" class="form-control" aria-label="Designação" aria-describedby="n_colaborador">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="ccustos">Centro Custos</span>
+                <span class="input-group-text" id="ccustos">Centro Custo</span>
                 <input type="number" name="ccustos" class="form-control" aria-label="Centro de custos" aria-describedby="ccustos">
             </div>
             <div class="input-group">
@@ -59,7 +59,7 @@
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="quantidade">Quantidade</span>
-                <input type="number" name="quantidade" class="form-control" aria-label="Quantidade" aria-describedby="quantidade">
+                <input type="number" name="quantidade" min="0" max="2" class="form-control" aria-label="Quantidade" aria-describedby="quantidade">
             </div>
             <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id'];?>">
             <p class="lead" style="text-align:center">
