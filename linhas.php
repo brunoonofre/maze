@@ -3,7 +3,7 @@
     if($cat == 3){
         $sql = $mysqli->query("SELECT * FROM linhas");
     }else{
-        //query para linhas apenas user logged in
+        header('Location: index.php');
     }
 
 ?>

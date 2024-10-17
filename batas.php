@@ -30,6 +30,7 @@
                 <?php 
                     while($rowpedidos = $sql->fetch_array()){
                         $id_bata = $rowpedidos['id_bata'];
+                        $id_utilizador = $rowpedidos['id_utilizador'];
                         $nome = $rowpedidos['nome'];
                         $estado = $rowpedidos['estado'];
                 ?>
@@ -50,11 +51,13 @@
                                 echo 'Pronto a levantar';
                             }?>
                         </td>
+                        <?php if($id_utilizador==$_SESSION['user_id'] && $estado==1){?>
                         <td class="delete">
                             <span style="cursor: pointer;"
                                     id="<?php echo $id_bata; ?>" 
                                     class="bi bi-trash delete"></span>
                         </td>
+                        <?php }else{echo '<td></td>';}?>
                     </tr>
                 <?php } ?>
                 </tbody>

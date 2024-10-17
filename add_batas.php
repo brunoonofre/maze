@@ -58,8 +58,12 @@
                 </select>
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="quantidade">Quantidade</span>
-                <input type="number" name="quantidade" min="0" max="2" class="form-control" aria-label="Quantidade" aria-describedby="quantidade">
+                <span class="input-group-text" for="quantidade">Quantidade</span>
+                <select class="form-select" aria-label="Quantidade" name="quantidade" id="quantidade">
+                    <option selected value="" style='display:none;'>Escolha a quantidade</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
             </div>
             <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id'];?>">
             <p class="lead" style="text-align:center">
