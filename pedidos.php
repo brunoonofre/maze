@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col">
             <p class="lead"><a href="addpedido"><button type="button" class="btn btn-primary">Pedir abastecimento</button></a></p>
-            <table class="table table-striped table-hover">
+            <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>Data</th>

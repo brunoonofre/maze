@@ -93,8 +93,8 @@
                         include 'add_material.php';
                         break;
                     case 'editmaterial':
-                            include 'edit_material.php';
-                            break;
+                        include 'edit_material.php';
+                        break;
                     case 'addlinha':
                         include 'add_linha.php';
                         break;
@@ -122,6 +122,15 @@
                     case 'bataview':
                         include 'bata_view.php';
                         break;    
+                    case 'bota':
+                        include 'botas.php';
+                        break;
+                    case 'addbotas':
+                        include 'add_botas.php';
+                        break;
+                    case 'botaview':
+                        include 'bota_view.php';
+                        break;
                     }
             ?>
         </section>

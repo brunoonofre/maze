@@ -12,17 +12,17 @@
                     <a class="nav-link <?php if($pag == 'pedido'){echo 'active" aria-current="page"';} ?>" href="pedido">Abastecimento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'batas'){echo 'active" aria-current="page"';} ?>" href="bata">Batas</a>
+                    <a class="nav-link <?php if($pag == 'bata'){echo 'active" aria-current="page"';} ?>" href="bata">Batas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'botas'){echo 'active" aria-current="page"';} ?>" href="bota">Botas</a>
+                    <a class="nav-link <?php if($pag == 'bota'){echo 'active" aria-current="page"';} ?>" href="bota">Calçado</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedir</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="addpedido">Abastecimento</a></li>
                         <li><a class="dropdown-item" href="addbatas">Batas</a></li>
-                        <li><a class="dropdown-item" href="addbotas">Botas</a></li>
+                        <li><a class="dropdown-item" href="addbotas">Calçado</a></li>
                     </ul>
                 </li>
             </ul>

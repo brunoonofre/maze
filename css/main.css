@@ -63,3 +63,9 @@ h4
     padding-left: 40px;
     padding-right: 40px;
 }
+
+.table-success
+{  
+    --bs-table-bg: #98d3b9;  
+    --bs-table-hover-bg: #acc9bd;
+}
