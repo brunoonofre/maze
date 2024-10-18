@@ -25,16 +25,16 @@
                         <li><a class="dropdown-item" href="addbotas">Botas</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'materia'){echo 'active" aria-current="page"';} ?>" href="materia">Material</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'linha'){echo 'active" aria-current="page"';} ?>" href="linha">Linhas</a>
-                </li>
             </ul>
             <ul class="d-flex navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'guser'){echo 'active" aria-current="page"';} ?>" href="guser"><?php echo $_SESSION['username'];?></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> <?php echo $_SESSION['username'];?></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="guser">Utilizadores</a></li>
+                        <li><a class="dropdown-item" href="departamentos">Departamentos</a></li>
+                        <li><a class="dropdown-item" href="linha">Linhas</a></li>
+                        <li><a class="dropdown-item" href="materia">Materiais</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
