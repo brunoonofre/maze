@@ -19,6 +19,7 @@
             $results = $mysqli->query("SELECT * FROM utilizadores WHERE id_utilizador = ".$_SESSION['user_id']);
             $rowuser = $results->fetch_array();
 
+            $username = $rowuser['nome'];
             $cat = $rowuser['cat']*1;
         }else{
             header('Location: includes/login.php');

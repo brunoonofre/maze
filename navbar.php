@@ -28,7 +28,7 @@
             </ul>
             <ul class="d-flex navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> <?php echo $_SESSION['username'];?></a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> <?php echo $username;?></a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="guser">Utilizadores</a></li>
                         <li><a class="dropdown-item" href="departamentos">Departamentos</a></li>
