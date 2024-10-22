@@ -76,7 +76,7 @@
                         include 'home.php';
                         break;
                     case 'noauth':
-                        echo $noauth;
+                        include 'registar.php';
                         break;
                     case 'pedido':
                         include 'pedidos.php';
