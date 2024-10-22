@@ -53,7 +53,7 @@
                 <select class="form-select" aria-label="Tipo" name="tipo" id="tipo">
                     <option selected value="" style='display:none;'>Escolha o tipo de bota</option>
                     <option value="Normal">Normal</option>
-                    <option value="Sandalia">Sandalia</option>
+                    <option value="Sandália">Sandalia</option>
                     <option value="Chinelo Ortopédico">Chinelo Ortopédico</option>
                 </select>
             </div>

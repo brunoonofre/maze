@@ -1,32 +1,31 @@
 <?php 
     
-    $id_bata = filter_input(INPUT_POST, 'id_bata', FILTER_DEFAULT);
+    $id_bota = filter_input(INPUT_POST, 'id_bota', FILTER_DEFAULT);
     
-    $bataview = $mysqli->query("SELECT * FROM batas WHERE id_bata = $id_bata");
+    $botaview = $mysqli->query("SELECT * FROM botas WHERE id_bota = $id_bota");
 
-    if($bataview->num_rows == 0){
-        header("Location: bata");
+    if($botaview->num_rows == 0){
+        header("Location: bota");
         exit;
     }
 
-    $rowbataview = $bataview->fetch_array();
+    $rowbotaview = $botaview->fetch_array();
 
-    $n_colaborador = $rowbataview['n_colaborador'];
-    $nome = $rowbataview['nome'];
-    $ccustos = $rowbataview['centro_custos'];
-    $departamento = $rowbataview['departamento'];
-    $tamanho = $rowbataview['tamanho'];
-    $cor = $rowbataview['cor'];
-    $quantidade = $rowbataview['quantidade'];
-    $estado = $rowbataview['estado'];
-    $data = $rowbataview['data'];
+    $n_colaborador = $rowbotaview['n_colaborador'];
+    $nome = $rowbotaview['nome'];
+    $ccustos = $rowbotaview['centro_custos'];
+    $departamento = $rowbotaview['departamento'];
+    $tamanho = $rowbotaview['tamanho'];
+    $tipo = $rowbotaview['tipo'];
+    $estado = $rowbotaview['estado'];
+    $data = $rowbotaview['data'];
     
 ?>
-<script type="text/JavaScript" src="js/bata_view.js"></script>
+<script type="text/JavaScript" src="js/bota_view.js"></script>
 <div class="container">
     <div class="row">
         <div class="col">
-            <h4 class="display-5 text-center">Pedido de Batas</h4>
+            <h4 class="display-5 text-center">Pedido de Calçado</h4>
         </div>
     </div>
     <div class="row">
@@ -42,7 +41,7 @@
                 <dt class="col-sm-4">Data</dt>
                 <dd class="col-sm-8"><?php echo $data;?></dd>
 
-                <dt class="col-sm-4">Nome na Bata</dt>
+                <dt class="col-sm-4">Nome</dt>
                 <dd class="col-sm-8"><?php echo $nome;?></dd>
 
                 <dt class="col-sm-4">Nº Colaborador</dt>
@@ -57,11 +56,8 @@
                 <dt class="col-sm-4">Tamanho</dt>
                 <dd class="col-sm-8"><?php echo $tamanho;?></dd>
 
-                <dt class="col-sm-4">Cor</dt>
-                <dd class="col-sm-8"><?php echo $cor;?></dd>
-
-                <dt class="col-sm-4">Quantidade</dt>
-                <dd class="col-sm-8"><?php echo $quantidade;?></dd>
+                <dt class="col-sm-4">Tipo</dt>
+                <dd class="col-sm-8"><?php echo $tipo;?></dd>
 
                 <dt class="col-sm-4">Estado</dt>
                 <dd class="col-sm-8"><p>
@@ -74,16 +70,16 @@
                     }?>
                 </p></dd>
             </dl>
-            <input type="hidden" name="id_bata" value="<?php echo $id_bata;?>">
+            <input type="hidden" name="id_bota" value="<?php echo $id_bota;?>">
             <?php if($estado==1 && $cat==3){?>
             <p class="lead" style="text-align:center">
                 <input type="hidden" name="estado" value="2">
-                <button id="batabtn" style="text-align:center" type="button" class="btn btn-primary">Encomendado</button>
+                <button id="botabtn" style="text-align:center" type="button" class="btn btn-primary">Encomendado</button>
             </p>
             <?php }else if($estado==2 && $cat==3){?>
             <p class="lead" style="text-align:center">
                 <input type="hidden" name="estado" value="3">
-                <button id="batabtn" style="text-align:center" type="button" class="btn btn-primary">Pronto a Levantar</button>
+                <button id="botabtn" style="text-align:center" type="button" class="btn btn-primary">Pronto a Levantar</button>
             </p>
             <?php } ?>
         </div>
