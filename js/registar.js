@@ -27,10 +27,12 @@ $(function(){
 
             var nome = $('input[name=nome]').val();
             var n_colaborador = $('input[name=n_colaborador]').val();
+            var email = $('input[name=email]').val();
             
             post_data = {
                 'nome': nome,
-                'n_colaborador': n_colaborador
+                'n_colaborador': n_colaborador,
+                'email': email
             };
             
             $.ajax({

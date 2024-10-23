@@ -13,7 +13,17 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     $bosch_user = trim($win_user, "UserName \r\nEMEA\\");
     $cat = 0;
 
-    // Username validity and password validity have been checked client side.
+    //Sanitize and validate email passed in
+    if(isset($_POST['email'])){
+
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        if ($email != '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error_msg = 'O email inserido nao e valido!';
+        }
+        
+    }        
+
+    // Data validity have been checked client side.
     // This should should be adequate as nobody gains any advantage from
     // breaking these rules.
     //
@@ -28,7 +38,7 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
         $stmt->store_result();
 
         if ($stmt->num_rows == 1) {
-            // A user with this email address already exists
+            // A user with this worker n
             $error_msg = "Este nº de colaborador já se encontra registado, verifica senão te enganas-te e/ou pede ajuda a um colega do Maze!";
             //$stmt->close();
         }
@@ -41,8 +51,8 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     if (empty($error_msg)) {
 
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO utilizadores (nome, cat, win_user, n_colaborador) VALUES (?, ?, ?, ?)")) {
-            $insert_stmt->bind_param('ssss', $nome, $cat, $bosch_user, $n_colaborador);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO utilizadores (nome, cat, win_user, n_colaborador, email) VALUES (?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('sssss', $nome, $cat, $bosch_user, $n_colaborador, $email);
             // Execute the prepared query.
             if (!$insert_stmt->execute()) {
                 $output = json_encode(array('success' => false, 'type' => 'email', 'text' => 'Ocorreu um erro no registo!'));

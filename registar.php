@@ -24,6 +24,10 @@
                 <span class="input-group-text" id="n_colaborador">Nº Colaborador</span>
                 <input type="number" name="n_colaborador" class="form-control" aria-label="Nº Colaborador" aria-describedby="n_colaborador">
             </div>
+            <div class="input-group">
+                <span class="input-group-text" id="email">Email</span>
+                <input type="text" name="email" class="form-control" aria-label="Email" aria-describedby="email">
+            </div>
             <input type="hidden" name="id_utilizador">
             <p class="lead" style="text-align:center">
                 <button id="registerbtn" style="text-align:center" type="button" class="btn btn-primary">Registar</button>
