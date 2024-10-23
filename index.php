@@ -108,9 +108,6 @@
                     case 'guser':
                         include 'g_user.php';
                         break;
-                    case 'adduser':
-                        include 'add_user.php';
-                        break;
                     case 'edituser':
                         include 'edit_user.php';
                         break;
