@@ -7,7 +7,8 @@
     $rowedituser = $sqledituser->fetch_array();
 
     $nome = $rowedituser['nome'];
-    $utilizador = $rowedituser['win_user'];
+    $n_colaborador = $rowedituser['n_colaborador'];
+    $email = $rowedituser['email'];
     $estatuto = $rowedituser['cat'];
 ?>
 <script type="text/JavaScript" src="js/edit_user.js"></script>
@@ -30,8 +31,12 @@
                 <input type="text" name="nome" value="<?php echo $nome;?>" class="form-control" aria-label="Nome" aria-describedby="nome">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="utilizador">Utilizador</span>
-                <input type="text" name="utilizador" value="<?php echo $utilizador;?>" class="form-control" aria-label="Utilizador" aria-describedby="utilizador">
+                <span class="input-group-text" id="n_colaborador">Nº Colaborador</span>
+                <input type="text" name="n_colaborador" value="<?php echo $n_colaborador;?>" class="form-control" aria-label="Nº Colaborador" aria-describedby="n_colaborador">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="email">Email</span>
+                <input type="text" name="email" value="<?php echo $email;?>" class="form-control" aria-label="Email" aria-describedby="email">
             </div>
             <div class="input-group">
                 <span class="input-group-text" for="categoria">Categoria</span>

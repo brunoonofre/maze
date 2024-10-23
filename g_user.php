@@ -70,7 +70,7 @@ $(function(){
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Utilizador</th>
+                        <th>Nº Colaborador</th>
                         <th>Categoria</th>
                     </tr>
                 </thead>
@@ -79,12 +79,12 @@ $(function(){
                     while($rowusers = $sql->fetch_array()){
                         $id_utilizador = $rowusers['id_utilizador'];
                         $nome = $rowusers['nome'];
-                        $utilizador = $rowusers['win_user'];
+                        $n_colaborador = $rowusers['n_colaborador'];
                         $estatuto = $rowusers['cat'];
                 ?>
                     <tr>
                         <td><?php echo $nome;?></td>
-                        <td><?php echo $utilizador;?></td>
+                        <td><?php echo $n_colaborador;?></td>
                         <td><?php if($estatuto==3){
                             echo 'Administrador';
                         }else if($estatuto==2){

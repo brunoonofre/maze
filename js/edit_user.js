@@ -19,11 +19,12 @@ $(function(){
     button.click(function(){
         
         var nome = $("input[name=nome]").val();
-        var utilizador = $("input[name=utilizador]").val();
+        var n_colaborador = $("input[name=n_colaborador]").val();
+        var email = $("input[name=email]").val();
         var estatuto = $("select[name=estatuto]").val();
         var id_utilizador = $("input[name=id_utilizador]").val();
        
-        if (nome == "" || utilizador == ""){
+        if (nome == "" || n_colaborador == ""){
             errordiv.slideDown();
             errormsg.html("Deve preencher todos os campos!");
             return false;
@@ -32,7 +33,8 @@ $(function(){
 
             post_data = {
                 'nome': nome,
-                'utilizador': utilizador,
+                'n_colaborador': n_colaborador,
+                'email': email,
                 'estatuto': estatuto,
                 'id_utilizador': id_utilizador
             };
