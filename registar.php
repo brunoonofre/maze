@@ -7,7 +7,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">    
-            <p class="lead">
+            <p class="lead" style="text-align:center">
                 Bem Vindo! Efectua o registo para usares o Maze Digital!
             </p>
             <div id="successdiv" class="alert alert-success">
