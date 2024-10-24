@@ -15,6 +15,12 @@ $(function(){
         } 
         
     });
+
+    let matlinha = <?php print(json_encode($matlinha)); ?>+"";
+    var matlinhaarr = matlinha.split(",");
+    $.each(matlinhaarr,function(i){
+        $( "input#"+matlinhaarr[i] ).prop( "checked", true );
+    });
     
     button.click(function(){
         
