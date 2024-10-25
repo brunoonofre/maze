@@ -1,7 +1,6 @@
 <?php
     
     $id_utilizador = filter_input(INPUT_POST, 'id_utilizador', FILTER_DEFAULT);
-    
 
     $sqledituser = $mysqli->query("SELECT * FROM utilizadores WHERE id_utilizador = ".$id_utilizador);
     $rowedituser = $sqledituser->fetch_array();

@@ -129,6 +129,15 @@
                     case 'botaview':
                         include 'bota_view.php';
                         break;
+                    case 'departamento':
+                        include 'departamentos.php';
+                        break;
+                    case 'adddepartamento':
+                        include 'add_departamento.php';
+                        break;
+                    case 'editdepartamento':
+                        include 'edit_departamento.php';
+                        break;
                     }
             ?>
         </section>
