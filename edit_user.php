@@ -37,24 +37,32 @@
                 <span class="input-group-text" id="email">Email</span>
                 <input type="text" name="email" value="<?php echo $email;?>" class="form-control" aria-label="Email" aria-describedby="email">
             </div>
+            <?php if($cat==3){?>
             <div class="input-group">
                 <span class="input-group-text" for="categoria">Categoria</span>
                 <select class="form-select" aria-label="Categoria" name="estatuto" id="estatuto">
                 <?php if ($estatuto == 3){?>
-                    <option value="3">Administrador</option>
-                    <option value="2">Line-Leader</option>
-                    <option value="1">POUP</option>
+                    <option value="3" selected>Administrador</option>
+                    <option value="2">Abastecedor</option>
+                    <option value="1">Colaborador</option>
                     <?php }else if ($estatuto == 2){?>
-                    <option value="2">Line-Leader</option>
+                    <option value="2" selected>Abastecedor</option>
                     <option value="3">Administrador</option>
-                    <option value="1">POUP</option>
+                    <option value="1">Colaborador</option>
                     <?php }else if ($estatuto == 1){?>
-                    <option value="1">POUP</option>
+                    <option value="1" selected>Colaborador</option>
+                    <option value="2">Abastecedor</option>
                     <option value="3">Administrador</option>
-                    <option value="2">Line-Leader</option>
                 <?php }?>
                 </select>
             </div>
+            <input type="hidden" name="redirpage" value="guser">
+            <?php }else{?>
+            <select name="estatuto" hidden>
+                <option value="<?php echo $estatuto?>" selected>estatuto</option>
+            </select>
+            <input type="hidden" name="redirpage" value="puser">
+            <?php } ?>
             <input type="hidden" name="id_utilizador" value="<?php echo $id_utilizador;?>">
             <p class="lead" style="text-align:center">
                 <button id="edituserbtn" style="text-align:center" type="button" class="btn btn-primary">Editar utilizador</button>

@@ -79,34 +79,77 @@
                         include 'registar.php';
                         break;
                     case 'pedido':
-                        include 'pedidos.php';
+                        if($cat>=2){
+                            include 'pedidos.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'materia':
-                        include 'material.php';
+                        if($cat==3){
+                            include 'material.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'linha':
-                        include 'linhas.php';
+                        if($cat==3){
+                            include 'linhas.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'addpedido':
-                        include 'add_pedido.php';
+                        if($cat>=2){
+                            include 'add_pedido.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'addmaterial':
-                        include 'add_material.php';
+                        if($cat==3){
+                            include 'add_material.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'editmaterial':
-                        include 'edit_material.php';
+                        if($cat==3){
+                            include 'edit_material.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'addlinha':
-                        include 'add_linha.php';
+                        if($cat==3){
+                            include 'add_linha.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'editlinha':
-                        include 'edit_linha.php';
+                        if($cat==3){
+                            include 'edit_linha.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'pedidoview':
-                        include 'pedido_view.php';
+                        if($cat>=2){
+                            include 'pedido_view.php';
+                        }else{
+                            echo $noauth;
+                        }
+                        break;
+                    case 'puser':
+                        include 'user.php';
                         break;
                     case 'guser':
-                        include 'g_user.php';
+                        if($cat==3){
+                            include 'g_user.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'edituser':
                         include 'edit_user.php';
@@ -130,13 +173,25 @@
                         include 'bota_view.php';
                         break;
                     case 'departamento':
-                        include 'departamentos.php';
+                        if($cat==3){
+                            include 'departamentos.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'adddepartamento':
-                        include 'add_departamento.php';
+                        if($cat==3){
+                            include 'add_departamento.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     case 'editdepartamento':
-                        include 'edit_departamento.php';
+                        if($cat==3){
+                            include 'edit_departamento.php';
+                        }else{
+                            echo $noauth;
+                        }
                         break;
                     }
             ?>

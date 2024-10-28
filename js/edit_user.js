@@ -23,6 +23,7 @@ $(function(){
         var email = $("input[name=email]").val();
         var estatuto = $("select[name=estatuto]").val();
         var id_utilizador = $("input[name=id_utilizador]").val();
+        var redirpage = $("input[name=redirpage]").val();
        
         if (nome == "" || n_colaborador == ""){
             errordiv.slideDown();
@@ -54,7 +55,7 @@ $(function(){
                         errormsg.html(response.text);
                     }else{
                         errordiv.slideUp();
-                        window.location = 'guser?success=Dados actualizados com sucesso!';
+                        window.location = redirpage+'?success=Dados actualizados com sucesso!';
                     }
                 }
             });

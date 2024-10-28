@@ -39,9 +39,9 @@
                         <td><?php if($estatuto==3){
                             echo 'Administrador';
                         }else if($estatuto==2){
-                            echo 'Line-Leader';
+                            echo 'Abastecedor';
                         }else if($estatuto==1){
-                            echo 'POUP';
+                            echo 'Colaborador';
                         };?></td>
                         <td class="edit">
                             <span style="cursor: pointer;"
