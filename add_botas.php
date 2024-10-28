@@ -1,3 +1,6 @@
+<?php
+    $sql = $mysqli->query("SELECT * FROM departamentos");
+?>
 <script type="text/JavaScript" src="js/add_botas.js"></script>
 <div class="container">
     <div class="row">
@@ -26,8 +29,13 @@
                 <input type="number" name="ccustos" class="form-control" aria-label="Centro de custos" aria-describedby="ccustos">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="departamento">Departamento</span>
-                <input type="text" name="departamento" class="form-control" aria-label="Departamento" aria-describedby="departamento">
+                <span class="input-group-text" for="departamento">Departamento</span>
+                <select class="form-select" aria-label="Departamento" name="departamento" id="departamento">
+                    <option selected value="" style='display:none;'>Escolha o departamento</option>
+                <?php while($rowdepart = $sql->fetch_assoc()){?>
+                    <option value="<?php echo $rowdepart['id_departamento']?>"><?php echo $rowdepart['nome']?></option>
+                <?php } ?>
+                </select>
             </div>
             <div class="input-group">
                 <span class="input-group-text" for="tamanho">Tamanho</span>

@@ -2,7 +2,19 @@
     
     $id_bata = filter_input(INPUT_POST, 'id_bata', FILTER_DEFAULT);
     
-    $bataview = $mysqli->query("SELECT * FROM batas WHERE id_bata = $id_bata");
+    $bataview = $mysqli->query("SELECT b.n_colaborador as n_colaborador,
+    b.nome as nome,
+    b.centro_custos as centro_custos,
+    d.nome as departamento,
+    b.tamanho as tamanho,
+    b.cor as cor,
+    b.quantidade as quantidade,
+    b.estado as estado,
+    b.data as data
+    FROM batas b 
+    INNER JOIN departamentos d
+    ON d.id_departamento = b.departamento 
+    WHERE id_bata = $id_bata");
 
     if($bataview->num_rows == 0){
         header("Location: bata");

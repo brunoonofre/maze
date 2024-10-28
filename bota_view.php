@@ -2,7 +2,18 @@
     
     $id_bota = filter_input(INPUT_POST, 'id_bota', FILTER_DEFAULT);
     
-    $botaview = $mysqli->query("SELECT * FROM botas WHERE id_bota = $id_bota");
+    $botaview = $mysqli->query("SELECT b.n_colaborador as n_colaborador,
+    b.nome as nome,
+    b.centro_custos as centro_custos,
+    d.nome as departamento,
+    b.tamanho as tamanho,
+    b.tipo as tipo,
+    b.estado as estado,
+    b.data as data
+    FROM botas b 
+    INNER JOIN departamentos d
+    ON d.id_departamento = b.departamento 
+    WHERE id_bota = $id_bota");
 
     if($botaview->num_rows == 0){
         header("Location: bota");
