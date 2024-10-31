@@ -66,8 +66,14 @@ h4
 
 .table-success
 {  
-    --bs-table-bg: #98d3b9;  
-    --bs-table-hover-bg: #acc9bd;
+    --bs-table-bg: #00884a;  
+    --bs-table-hover-bg: rgb(143, 211, 177);
+}
+
+.table-info
+{
+    --bs-table-bg: #674199;
+    --bs-table-hover-bg: #7c6e8f;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -80,4 +86,13 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.cardimgcenter
+{
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
 }

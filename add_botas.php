@@ -56,14 +56,33 @@
                     <option value="46">46</option>
                 </select>
             </div>
-            <div class="input-group">
-                <span class="input-group-text" for="tipo">Tipo</span>
-                <select class="form-select" aria-label="Tipo" name="tipo" id="tipo">
-                    <option selected value="" style='display:none;'>Escolha o tipo de bota</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Sandália">Sandalia</option>
-                    <option value="Chinelo Ortopédico">Chinelo Ortopédico</option>
-                </select>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="img/bota.png" class="card-img-top cardimgcenter" alt="...">
+                        <div class="card-body">
+                            <div class="form-check form-check-reverse">
+                                <input class="form-check-input" type="radio" value="Bota" id="tipo1">
+                                <label class="form-check-label" for="tipo1">
+                                    <h5 class="card-title">Bota</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="img/sandalia.png" class="card-img-top cardimgcenter" alt="...">
+                        <div class="card-body">
+                            <div class="form-check form-check-reverse">
+                                <input class="form-check-input" type="radio" value="Sandália" id="tipo2">
+                                <label class="form-check-label" for="tipo2">
+                                    <h5 class="card-title">Sandália</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id'];?>">
             <p class="lead" style="text-align:center">
