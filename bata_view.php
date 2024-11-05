@@ -3,6 +3,7 @@
     $id_bata = filter_input(INPUT_POST, 'id_bata', FILTER_DEFAULT);
     
     $bataview = $mysqli->query("SELECT b.n_colaborador as n_colaborador,
+    b.admissao as admissao,
     b.nome as nome,
     b.centro_custos as centro_custos,
     d.nome as departamento,
@@ -24,6 +25,7 @@
     $rowbataview = $bataview->fetch_array();
 
     $n_colaborador = $rowbataview['n_colaborador'];
+    $admissao = $rowbataview['admissao'];
     $nome = $rowbataview['nome'];
     $ccustos = $rowbataview['centro_custos'];
     $departamento = $rowbataview['departamento'];
@@ -53,6 +55,9 @@
             <dl class="row">
                 <dt class="col-sm-4">Data</dt>
                 <dd class="col-sm-8"><?php echo $data;?></dd>
+
+                <dt class="col-sm-4">Motivo de pedido</dt>
+                <dd class="col-sm-8"><?php if($admissao==1){echo 'Admissão';}else if($admissao==0){echo 'Renovação';}?></dd>
 
                 <dt class="col-sm-4">Nome na Bata</dt>
                 <dd class="col-sm-8"><?php echo $nome;?></dd>

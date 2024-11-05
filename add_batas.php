@@ -16,6 +16,13 @@
             <div id="errordiv" class="alert alert-danger">
                 <strong id="error"></strong>
             </div>
+            <div class="input-group admissao">
+                <input type="radio" class="btn-check" name="admissao" id="admissao1" autocomplete="off" checked value="1">
+                <label class="btn btn-outline-primary" for="admissao1">Admissão</label>
+
+                <input type="radio" class="btn-check" name="admissao" id="admissao2" autocomplete="off" value="0">
+                <label class="btn btn-outline-primary" for="admissao2">Renovação</label>
+            </div>
             <div class="input-group">
                 <span class="input-group-text" id="nome">Nome na bata</span>
                 <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome">
@@ -58,11 +65,13 @@
                 <span class="input-group-text" for="cor">Cor</span>
                 <select class="form-select" aria-label="Cor" name="cor" id="cor">
                     <option selected value="" style='display:none;'>Escolha a cor</option>
-                    <option value="Branco">Branco (Geral)</option>
-                    <option value="Azulclaro">Azul Claro (Line-Leader)</option>
-                    <option value="Azulescuro">Azul Escuro (Logistica)</option>
-                    <option value="Verde">Verde (Cat)</option>
-                    <option value="Cinzento">Cinzento (Manutenção Mecânica)</option>
+                    <option value="Branco (Geral)">Branco (Geral)</option>
+                    <option value="Branco Tutor (Nome Azul)">Branco Tutor (Nome Azul)</option>
+                    <option value="Branco s/Nome (Temporário)">Branco s/Nome (Temporário)</option>
+                    <option value="Azul Claro (Line-Leader)">Azul Claro (Line-Leader)</option>
+                    <option value="Azul Escuro (Logistica)">Azul Escuro (Logistica)</option>
+                    <option value="Verde (Cat)">Verde (Cat)</option>
+                    <option value="Cinzento (Manutenção Mecânica)">Cinzento (Manutenção Mecânica)</option>
                 </select>
             </div>
             <div class="input-group">

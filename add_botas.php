@@ -16,6 +16,13 @@
             <div id="errordiv" class="alert alert-danger">
                 <strong id="error"></strong>
             </div>
+            <div class="input-group admissao">
+                <input type="radio" class="btn-check" name="admissao" id="admissao1" autocomplete="off" checked value="1">
+                <label class="btn btn-outline-primary" for="admissao1">Admissão</label>
+
+                <input type="radio" class="btn-check" name="admissao" id="admissao2" autocomplete="off" value="0">
+                <label class="btn btn-outline-primary" for="admissao2">Renovação</label>
+            </div>
             <div class="input-group">
                 <span class="input-group-text" id="nome">Nome</span>
                 <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome">
@@ -62,7 +69,7 @@
                         <img src="img/bota.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
                             <div class="form-check form-check-reverse">
-                                <input class="form-check-input" type="radio" value="Bota" id="tipo1">
+                                <input class="form-check-input" type="radio" name="tipo" value="Bota" id="tipo1">
                                 <label class="form-check-label" for="tipo1">
                                     <h5 class="card-title">Bota</h5>
                                 </label>
@@ -75,7 +82,7 @@
                         <img src="img/sandalia.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
                             <div class="form-check form-check-reverse">
-                                <input class="form-check-input" type="radio" value="Sandália" id="tipo2">
+                                <input class="form-check-input" type="radio" name="tipo" value="Sandália" id="tipo2">
                                 <label class="form-check-label" for="tipo2">
                                     <h5 class="card-title">Sandália</h5>
                                 </label>

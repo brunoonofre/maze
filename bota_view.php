@@ -3,6 +3,7 @@
     $id_bota = filter_input(INPUT_POST, 'id_bota', FILTER_DEFAULT);
     
     $botaview = $mysqli->query("SELECT b.n_colaborador as n_colaborador,
+    b.admissao as admissao,
     b.nome as nome,
     b.centro_custos as centro_custos,
     d.nome as departamento,
@@ -23,6 +24,7 @@
     $rowbotaview = $botaview->fetch_array();
 
     $n_colaborador = $rowbotaview['n_colaborador'];
+    $admissao = $rowbotaview['admissao'];
     $nome = $rowbotaview['nome'];
     $ccustos = $rowbotaview['centro_custos'];
     $departamento = $rowbotaview['departamento'];
@@ -51,6 +53,10 @@
             <dl class="row">
                 <dt class="col-sm-4">Data</dt>
                 <dd class="col-sm-8"><?php echo $data;?></dd>
+
+                <dt class="col-sm-4">Motivo de pedido</dt>
+                <dd class="col-sm-8"><?php if($admissao==1){echo 'Admissão';}else if($admissao==0){echo 'Renovação';}?></dd>
+
 
                 <dt class="col-sm-4">Nome</dt>
                 <dd class="col-sm-8"><?php echo $nome;?></dd>

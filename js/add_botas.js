@@ -18,23 +18,25 @@ $(function(){
     
     button.click(function(){
         
-        if($('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' ||$('input[name=ccustos]').val() == '' ||$('select[name=departamento]').val() == '' ||$('select[name=tamanho]').val() == ''||$('select[name=tipo]').val() == ''){
+        if($('input[name=admissao]:checked').val() == null ||$('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' ||$('input[name=ccustos]').val() == '' ||$('select[name=departamento]').val() == '' ||$('select[name=tamanho]').val() == ''||$('input[name=tipo]:checked').val() == null){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
             return false;
         }else{
 
+            var admissao = $('input[name=admissao]:checked').val();
             var id_utilizador = $('input[name=id_utilizador]').val();
             var nome = $('input[name=nome]').val();
             var n_colaborador = $('input[name=n_colaborador]').val();
             var ccustos = $('input[name=ccustos]').val();
             var departamento = $('select[name=departamento]').val();
             var tamanho = $('select[name=tamanho]').val();
-            var tipo = $('select[name=tipo]').val();
+            var tipo = $('input[name=tipo]:checked').val();
             var estado = 1;
 
             post_data = {
+                'admissao': admissao,
                 'id_utilizador': id_utilizador,
                 'nome': nome,
                 'n_colaborador': n_colaborador,
