@@ -11,7 +11,7 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     $n_colaborador = filter_input(INPUT_POST, 'n_colaborador', FILTER_DEFAULT);
     $win_user = shell_exec("wmic computersystem get username");
     $bosch_user = trim($win_user, "UserName \r\nEMEA\\");
-    $cat = 1;
+    $cat = 0;
 
     //Sanitize and validate email passed in
     if(isset($_POST['email'])){

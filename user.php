@@ -40,8 +40,10 @@
                     <?php if($estatuto==3){
                         echo 'Administrador';
                     }elseif($estatuto==2){
-                        echo 'Abastecedor';
+                        echo 'Line-Leader';
                     }elseif($estatuto==1){
+                        echo 'Abastecedor';
+                    }elseif($estatuto==0){
                         echo 'Colaborador';
                     }?>
                 </p></dd>

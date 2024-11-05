@@ -39,8 +39,10 @@
                         <td><?php if($estatuto==3){
                             echo 'Administrador';
                         }else if($estatuto==2){
-                            echo 'Abastecedor';
+                            echo 'Line-Leader';
                         }else if($estatuto==1){
+                            echo 'Abastecedor';
+                        }else if($estatuto==0){
                             echo 'Colaborador';
                         };?></td>
                         <td class="edit">

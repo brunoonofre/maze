@@ -43,16 +43,24 @@
                 <select class="form-select" aria-label="Categoria" name="estatuto" id="estatuto">
                 <?php if ($estatuto == 3){?>
                     <option value="3" selected>Administrador</option>
-                    <option value="2">Abastecedor</option>
-                    <option value="1">Colaborador</option>
+                    <option value="2">Line-Leader</option>
+                    <option value="1">Abastecedor</option>
+                    <option value="0">Colaborador</option>
                     <?php }else if ($estatuto == 2){?>
-                    <option value="2" selected>Abastecedor</option>
                     <option value="3">Administrador</option>
-                    <option value="1">Colaborador</option>
+                    <option value="2" selected>Line-Leader</option>
+                    <option value="1">Abastecedor</option>
+                    <option value="0">Colaborador</option>
                     <?php }else if ($estatuto == 1){?>
-                    <option value="1" selected>Colaborador</option>
-                    <option value="2">Abastecedor</option>
                     <option value="3">Administrador</option>
+                    <option value="2">Line-Leader</option>
+                    <option value="1" selected>Abastecedor</option>
+                    <option value="0">Colaborador</option>
+                    <?php }else if ($estatuto == 0){?>
+                    <option value="3">Administrador</option>
+                    <option value="2">Line-Leader</option>
+                    <option value="1">Abastecedor</option>
+                    <option value="0" selected>Colaborador</option>
                 <?php }?>
                 </select>
             </div>

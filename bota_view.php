@@ -57,7 +57,6 @@
                 <dt class="col-sm-4">Motivo de pedido</dt>
                 <dd class="col-sm-8"><?php if($admissao==1){echo 'Admissão';}else if($admissao==0){echo 'Renovação';}?></dd>
 
-
                 <dt class="col-sm-4">Nome</dt>
                 <dd class="col-sm-8"><?php echo $nome;?></dd>
 
