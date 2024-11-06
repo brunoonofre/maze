@@ -63,8 +63,8 @@
                     <option value="46">46</option>
                 </select>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
+            <div class="cardpadding row justify-content-center pdbottom">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="img/bota.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="card">
                         <img src="img/sandalia.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
@@ -90,6 +90,21 @@
                         </div>
                     </div>
                 </div>
+                <?php if($cat>=2){?>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/ortopedico.jpg" class="card-img-top cardimgcenter" alt="...">
+                        <div class="card-body">
+                            <div class="form-check form-check-reverse">
+                                <input class="form-check-input" type="radio" name="tipo" value="Chinelo Ortopédico" id="tipo3">
+                                <label class="form-check-label" for="tipo3">
+                                    <h5 class="card-title">Chinelo Ortopédico</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
             </div>
             <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id'];?>">
             <p class="lead" style="text-align:center">
