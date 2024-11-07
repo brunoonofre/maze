@@ -1,4 +1,8 @@
 <?php
+
+    if($cat<3){
+        header('Location: ../maze');
+    }
     
     $id_departamento = filter_input(INPUT_POST, 'id_departamento', FILTER_DEFAULT);
 

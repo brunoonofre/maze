@@ -1,3 +1,8 @@
+<?php     
+    if($cat<3){
+        header('Location: ../maze');
+    }
+?>
 <script type="text/JavaScript" src="js/add_linha.js"></script>
 <div class="container">
     <div class="row">

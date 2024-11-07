@@ -1,4 +1,8 @@
-<?php 
+<?php     
+
+    if($cat==0){
+        header('Location: ../maze');
+    }
     
     $id_pedido = filter_input(INPUT_POST, 'id_pedido', FILTER_DEFAULT);
     

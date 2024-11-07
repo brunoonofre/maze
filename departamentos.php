@@ -3,7 +3,7 @@
     if($cat == 3){
         $sql = $mysqli->query("SELECT * FROM departamentos");
     }else{
-        header('Location: index.php');
+        header('Location: ../maze');
     }
 
 ?>

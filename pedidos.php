@@ -1,4 +1,8 @@
 <?php
+        
+    if($cat==0){
+        header('Location: ../maze');
+    }
 
     if($cat == 3){
         $sql = $mysqli->query("SELECT p.id_pedido as id_pedido,

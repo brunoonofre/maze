@@ -1,4 +1,7 @@
-<?php
+<?php    
+    if($cat<3){
+        header('Location: ../maze');
+    }
     
     $sql = $mysqli->query("SELECT * FROM departamentos");
     

@@ -1,4 +1,8 @@
-<?php
+<?php    
+
+    if($cat<3){
+        header('Location: ../maze');
+    }
     
     $id_material = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
     

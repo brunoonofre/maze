@@ -1,4 +1,8 @@
 <?php
+    if($cat==0){
+        header('Location: ../maze');
+    }
+
     $sql = $mysqli->query("SELECT * FROM departamentos");
 ?>
 <script type="text/JavaScript" src="js/add_batas.js"></script>

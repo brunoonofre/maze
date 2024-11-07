@@ -1,4 +1,9 @@
 <?php
+    
+    if($cat<3){
+        header('Location: ../maze');
+    }
+
     $id_linha = filter_input(INPUT_POST, 'id_linha', FILTER_DEFAULT);
     
     $sqlmaterial = $mysqli->query("SELECT * FROM materiais");

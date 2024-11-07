@@ -1,7 +1,9 @@
-<?php
+<?php    
+    if($cat==0){
+        header('Location: ../maze');
+    }
 
     $sqllinha = $mysqli->query("SELECT * FROM linhas");
-
 ?>
 <script type="text/JavaScript" src="js/add_pedido.js"></script>
 <div class="container">

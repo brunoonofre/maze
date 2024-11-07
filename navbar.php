@@ -8,7 +8,7 @@
         <?php if($log=='in'){?>
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <?php if($cat>=2){?>
+                <?php if($cat>=1){?>
                 <li class="nav-item">
                     <a class="nav-link <?php if($pag == 'pedido'){echo 'active" aria-current="page"';} ?>" href="pedido">Abastecimento</a>
                 </li>
@@ -22,7 +22,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedir</a>
                     <ul class="dropdown-menu">
-                        <?php if($cat>=2){?>
+                        <?php if($cat>=1){?>
                         <li><a class="dropdown-item" href="addpedido">Abastecimento</a></li>
                         <?php }?>
                         <li><a class="dropdown-item" href="addbatas">Batas</a></li>

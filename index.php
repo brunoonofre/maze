@@ -79,7 +79,7 @@
                         include 'registar.php';
                         break;
                     case 'pedido':
-                        if($cat>=2){
+                        if($cat>=1){
                             include 'pedidos.php';
                         }else{
                             echo $noauth;
@@ -100,7 +100,7 @@
                         }
                         break;
                     case 'addpedido':
-                        if($cat>=2){
+                        if($cat>=1){
                             include 'add_pedido.php';
                         }else{
                             echo $noauth;
@@ -135,7 +135,7 @@
                         }
                         break;
                     case 'pedidoview':
-                        if($cat>=2){
+                        if($cat>=1){
                             include 'pedido_view.php';
                         }else{
                             echo $noauth;
