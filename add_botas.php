@@ -25,7 +25,7 @@
                 <label class="btn btn-outline-primary admissao" for="admissao1">Admissão</label>
 
                 <input type="radio" class="btn-check" name="admissao" id="admissao2" autocomplete="off" value="0">
-                <label class="btn btn-outline-primary admissao" for="admissao2">Renovação</label>
+                <label class="btn btn-outline-primary" for="admissao2">Renovação</label>
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="nome">Nome</span>
