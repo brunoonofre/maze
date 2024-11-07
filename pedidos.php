@@ -45,10 +45,10 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Linha</th>
-                        <th>Requerente</th>
-                        <th>Estado</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Linha</th>
+                        <th scope="col">Requerente</th>
+                        <th scope="col">Estado</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
