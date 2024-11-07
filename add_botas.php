@@ -68,7 +68,7 @@
                 </select>
             </div>
             <div class="cardpadding row justify-content-center pdbottom">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="img/bota.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="img/sandalia.png" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <?php if($cat>=2){?>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="img/ortopedico.jpg" class="card-img-top cardimgcenter" alt="...">
                         <div class="card-body">
@@ -103,6 +103,19 @@
                                 <input class="form-check-input" type="radio" name="tipo" value="Chinelo Ortopédico" id="tipo3">
                                 <label class="form-check-label" for="tipo3">
                                     <h5 class="card-title">Chinelo Ortopédico</h5>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="img/cleanroom.jpg" class="card-img-top cardimgcenter" alt="...">
+                        <div class="card-body">
+                            <div class="form-check form-check-reverse">
+                                <input class="form-check-input" type="radio" name="tipo" value="Bota Cleanroom" id="tipo3">
+                                <label class="form-check-label" for="tipo3">
+                                    <h5 class="card-title">Bota Cleanroom</h5>
                                 </label>
                             </div>
                         </div>
