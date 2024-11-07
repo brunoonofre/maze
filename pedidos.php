@@ -6,6 +6,7 @@
 
     if($cat == 3){
         $sql = $mysqli->query("SELECT p.id_pedido as id_pedido,
+                                    p.id_utilizador as id_utilizador,
                                     p.data as data,
                                     l.nome as linha,
                                     u.nome as utilizador,
@@ -55,6 +56,7 @@
                 <?php 
                     while($rowpedidos = $sql->fetch_array()){
                         $id_pedido = $rowpedidos['id_pedido'];
+                        $id_utilizador = $rowpedidos['id_utilizador'];
                         $data = $rowpedidos['data'];
                         $linha = $rowpedidos['linha'];
                         $utilizador = $rowpedidos['utilizador'];
@@ -80,11 +82,13 @@
                                 echo ' Atendido';
                             }?>
                         </td>
+                        <?php if($id_utilizador==$_SESSION['user_id'] && $estado==1){?>
                         <td class="delete">
                             <span style="cursor: pointer;"
                                     id="<?php echo $id_pedido; ?>" 
                                     class="bi bi-trash delete"></span>
                         </td>
+                        <?php }else{echo '<td></td>';}?>
                     </tr>
                 <?php } ?>
                 </tbody>
