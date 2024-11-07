@@ -101,6 +101,11 @@
             <p class="lead" style="text-align:center">
                 <button style="text-align:center" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#enviarnota">Enviar Nota</button>
             </p>
+            <?php } 
+            if($cat==3){ ?>
+            <p class="lead" style="text-align:center">
+                <button style="text-align:center" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sapoutput">Output SAP</button>
+            </p>
             <?php } ?>
         </div>
         <div class="col-md-4">
@@ -137,6 +142,64 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         <button type="button" id="notabtn" class="btn btn-primary">Enviar</button>
       </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="sapoutput" tabindex="-1" aria-labelledby="sapoutputh" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="sapoutputh">Output para Sap</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">             
+                <div class="col-md-6">
+                    <table class="table">
+                        <tbody>
+                            <?php 
+                                foreach ($lista as $item) {
+                                    $id = $item['id'];
+                                    $quantidade = $item['qty'];
+                                    $sql = $mysqli->query("SELECT part_number, descricao FROM materiais WHERE id_material=$id");
+                                    $rowlista = $sql->fetch_array();
+                                    $pn = $rowlista['part_number'];
+                                    $descricao = $rowlista['descricao'];
+                            ?>   
+                            <tr>
+                                <td><?php echo $pn;?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table">
+                        <tbody>
+                            <?php 
+                                foreach ($lista as $item) {
+                                    $id = $item['id'];
+                                    $quantidade = $item['qty'];
+                                    $sql = $mysqli->query("SELECT part_number, descricao FROM materiais WHERE id_material=$id");
+                                    $rowlista = $sql->fetch_array();
+                                    $pn = $rowlista['part_number'];
+                                    $descricao = $rowlista['descricao'];
+                            ?>   
+                            <tr>
+                                <td><?php echo $quantidade;?></td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" name="atp" value="<?php if($cat==3 && $estado==1){echo 1;}else{echo 0;}?>">
+            <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id']; ?>">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" id="notabtn" class="btn btn-primary">Enviar</button>
+        </div>
     </div>
   </div>
 </div>
