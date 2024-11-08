@@ -195,10 +195,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <input type="hidden" name="atp" value="<?php if($cat==3 && $estado==1){echo 1;}else{echo 0;}?>">
-            <input type="hidden" name="id_utilizador" value="<?php echo $_SESSION['user_id']; ?>">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" id="notabtn" class="btn btn-primary">Enviar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>
     </div>
   </div>

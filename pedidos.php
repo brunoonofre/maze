@@ -19,6 +19,7 @@
                                     ORDER BY p.id_pedido DESC");
     }else{
         $sql = $mysqli->query("SELECT p.id_pedido as id_pedido,
+                                    p.id_utilizador as id_utilizador,
                                     p.data as data,
                                     l.nome as linha,
                                     u.nome as utilizador,
