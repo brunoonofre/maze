@@ -5,7 +5,7 @@
     $bataview = $mysqli->query("SELECT b.n_colaborador as n_colaborador,
     b.admissao as admissao,
     b.nome as nome,
-    b.centro_custos as centro_custos,
+    d.centro_custo as centro_custo,
     d.nome as departamento,
     b.tamanho as tamanho,
     b.cor as cor,
@@ -14,8 +14,8 @@
     b.data as data
     FROM batas b 
     INNER JOIN departamentos d
-    ON d.id_departamento = b.departamento 
-    WHERE id_bata = $id_bata");
+    ON d.id_departamento = b.centro_custo
+    WHERE b.id_bata = $id_bata");
 
     if($bataview->num_rows == 0){
         header("Location: bata");
@@ -27,7 +27,7 @@
     $n_colaborador = $rowbataview['n_colaborador'];
     $admissao = $rowbataview['admissao'];
     $nome = $rowbataview['nome'];
-    $ccustos = $rowbataview['centro_custos'];
+    $ccusto = $rowbataview['centro_custo'];
     $departamento = $rowbataview['departamento'];
     $tamanho = $rowbataview['tamanho'];
     $cor = $rowbataview['cor'];
@@ -68,8 +68,8 @@
                 <dt class="col-sm-4">Departamento</dt>
                 <dd class="col-sm-8"><?php echo $departamento;?></dd>
 
-                <dt class="col-sm-4">Centro de Custos</dt>
-                <dd class="col-sm-8"><?php echo $ccustos;?></dd>
+                <dt class="col-sm-4">Centro de Custo</dt>
+                <dd class="col-sm-8"><?php echo $ccusto;?></dd>
 
                 <dt class="col-sm-4">Tamanho</dt>
                 <dd class="col-sm-8"><?php echo $tamanho;?></dd>

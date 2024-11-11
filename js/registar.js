@@ -18,7 +18,7 @@ $(function(){
     
     button.click(function(){
 
-        if($('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == ''){
+        if($('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' || $('input[name=email]').val() == ''){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
@@ -28,11 +28,13 @@ $(function(){
             var nome = $('input[name=nome]').val();
             var n_colaborador = $('input[name=n_colaborador]').val();
             var email = $('input[name=email]').val();
+            var departamento = $('select[name=departamento]').val();
             
             post_data = {
                 'nome': nome,
                 'n_colaborador': n_colaborador,
-                'email': email
+                'email': email,
+                'departamento': departamento
             };
             
             $.ajax({

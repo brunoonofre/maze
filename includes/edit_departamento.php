@@ -5,8 +5,9 @@
     
     $id_departamento = filter_input(INPUT_POST, 'id_departamento', FILTER_DEFAULT);
     $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
+    $ccusto = filter_input(INPUT_POST, 'ccusto', FILTER_DEFAULT);
         
-    $edit = $mysqli->query("UPDATE departamentos SET nome = '".$nome."' WHERE id_departamento = '".$id_departamento."'");
+    $edit = $mysqli->query("UPDATE departamentos SET nome = '".$nome."', centro_custo = '".$ccusto."' WHERE id_departamento = '".$id_departamento."'");
     
     if($edit){
         $output = json_encode(array('success' => true, 'text' => 'Dados editados com sucesso!'));

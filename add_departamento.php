@@ -25,6 +25,10 @@
                 <span class="input-group-text" id="nome">Nome</span>
                 <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome">
             </div>
+            <div class="input-group">
+                <span class="input-group-text" id="ccusto">Centro de custo</span>
+                <input type="number" name="ccusto" class="form-control" aria-label="Centro de custo" aria-describedby="ccusto">
+            </div>
             <p class="lead" style="text-align:center">
                 <button id="adddepartamentobtn" style="text-align:center" type="button" class="btn btn-primary">Adicionar Departamento</button>
             </p>

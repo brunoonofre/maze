@@ -15,12 +15,13 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <p class="lead"><a href="adddepartamento"><button type="button" class="btn btn-primary">Adicionar Departamento</button></a></p>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Nome</th>
+                        <th>Centro de custo</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -28,9 +29,11 @@
                     while($rowdepartamento = $sql->fetch_array()){
                         $id_departamento = $rowdepartamento['id_departamento'];
                         $nome = $rowdepartamento['nome'];
+                        $ccusto = $rowdepartamento['centro_custo'];
                 ?>
                     <tr>
                         <td id="<?php echo $id_departamento;?>"><?php echo $nome;?></td>
+                        <td id="<?php echo $id_departamento;?>"><?php echo $ccusto;?></td>
                         <td class="edit">
                             <span style="cursor: pointer;"
                                     id="<?php echo $id_departamento; ?>" 

@@ -20,7 +20,7 @@ $(function(){
 
     
         
-        if($('input[name=admissao]:checked').val() == null ||$('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' ||$('input[name=ccustos]').val() == '' ||$('select[name=departamento]').val() == '' ||$('select[name=tamanho]').val() == ''||$('select[name=cor]').val() == '' ||$('select[name=quantidade]').val() == ''){
+        if($('input[name=admissao]:checked').val() == null ||$('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' ||$('select[name=ccusto]').val() == '' ||$('select[name=tamanho]').val() == ''||$('select[name=cor]').val() == '' ||$('select[name=quantidade]').val() == ''){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
@@ -31,8 +31,7 @@ $(function(){
             var id_utilizador = $('input[name=id_utilizador]').val();
             var nome = $('input[name=nome]').val();
             var n_colaborador = $('input[name=n_colaborador]').val();
-            var ccustos = $('input[name=ccustos]').val();
-            var departamento = $('select[name=departamento]').val();
+            var ccusto = $('select[name=ccusto]').val();
             var tamanho = $('select[name=tamanho]').val();
             var cor = $('select[name=cor]').val();
             var quantidade = $('select[name=quantidade]').val();
@@ -43,7 +42,7 @@ $(function(){
                 'id_utilizador': id_utilizador,
                 'nome': nome,
                 'n_colaborador': n_colaborador,
-                'ccustos': ccustos,
+                'ccusto': ccusto,
                 'departamento': departamento,
                 'tamanho': tamanho,
                 'cor': cor,

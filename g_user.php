@@ -1,7 +1,14 @@
 <?php
 
     if($cat == 3){
-        $sql = $mysqli->query("SELECT * FROM utilizadores");
+        $sql = $mysqli->query("SELECT u.id_utilizador as id_utilizador,
+        u.nome as nome,
+        u.n_colaborador as n_colaborador,
+        u.cat as estatuto,
+        d.nome as departamento
+        FROM utilizadores u
+        INNER JOIN departamentos d
+        ON d.id_departamento=u.departamento");
     }else{
         header('Location: ../maze');
     }
@@ -15,13 +22,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Nº Colaborador</th>
+                        <th>Departamento</th>
                         <th>Categoria</th>
                     </tr>
                 </thead>
@@ -31,11 +39,13 @@
                         $id_utilizador = $rowusers['id_utilizador'];
                         $nome = $rowusers['nome'];
                         $n_colaborador = $rowusers['n_colaborador'];
-                        $estatuto = $rowusers['cat'];
+                        $departamento = $rowusers['departamento'];
+                        $estatuto = $rowusers['estatuto'];
                 ?>
                     <tr>
                         <td><?php echo $nome;?></td>
                         <td><?php echo $n_colaborador;?></td>
+                        <td><?php echo $departamento;?></td>
                         <td><?php if($estatuto==3){
                             echo 'Administrador';
                         }else if($estatuto==2){

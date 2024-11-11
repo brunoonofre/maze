@@ -1,3 +1,6 @@
+<?php    
+    $sqldepartamento = $mysqli->query("SELECT * FROM departamentos");
+?>
 <script type="text/JavaScript" src="js/registar.js"></script>
 <div class="container">
     <div class="row">
@@ -27,6 +30,20 @@
             <div class="input-group">
                 <span class="input-group-text" id="email">Email</span>
                 <input type="text" name="email" class="form-control" aria-label="Email" aria-describedby="email">
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="departamento">Departamento</label>
+                <select class="form-select" aria-label="Departamento" name="departamento" id="departamento">
+                    <option selected style='display:none;'>Escolhe um departamento</option>
+                    <?php 
+                        while($rowdepartamento = $sqldepartamento->fetch_array()){
+                            $id_departamento = $rowdepartamento['id_departamento'];
+                            $nome = $rowdepartamento['nome'];
+                            $ccusto = $rowdepartamento['centro_custo'];
+                    ?>
+                    <option value="<?php echo $id_departamento;?>"><?php echo $nome.' | '.$ccusto;?></option>
+                    <?php } ?>
+                </select>
             </div>
             <input type="hidden" name="id_utilizador">
             <p class="lead" style="text-align:center">

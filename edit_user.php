@@ -5,10 +5,13 @@
     $sqledituser = $mysqli->query("SELECT * FROM utilizadores WHERE id_utilizador = ".$id_utilizador);
     $rowedituser = $sqledituser->fetch_array();
 
+    $sqldepartamento = $mysqli->query("SELECT * FROM departamentos");
+
     $nome = $rowedituser['nome'];
     $n_colaborador = $rowedituser['n_colaborador'];
     $email = $rowedituser['email'];
     $estatuto = $rowedituser['cat'];
+    $departamento = $rowedituser['departamento'];
 ?>
 <script type="text/JavaScript" src="js/edit_user.js"></script>
 <div class="container">
@@ -36,6 +39,20 @@
             <div class="input-group">
                 <span class="input-group-text" id="email">Email</span>
                 <input type="text" name="email" value="<?php echo $email;?>" class="form-control" aria-label="Email" aria-describedby="email">
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="departamento">Departamento</label>
+                <select class="form-select" aria-label="Departamento" name="departamento" id="departamento">
+                    <option selected style='display:none;'>Escolhe um departamento</option>
+                    <?php 
+                        while($rowdepartamento = $sqldepartamento->fetch_array()){
+                            $id_departamento = $rowdepartamento['id_departamento'];
+                            $nome = $rowdepartamento['nome'];
+                            $ccusto = $rowdepartamento['centro_custo'];
+                    ?>
+                    <option <?php if($id_departamento==$departamento){echo 'selected';}?> value="<?php echo $id_departamento;?>"><?php echo $nome.' | '.$ccusto;?></option>
+                    <?php } ?>
+                </select>
             </div>
             <?php if($cat==3){?>
             <div class="input-group">

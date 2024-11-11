@@ -26,9 +26,11 @@ $(function(){
         }else{
 
             var nome = $('input[name=nome]').val();
+            var ccusto = $('input[name=ccusto]').val();
             
             post_data = {
-                'nome': nome
+                'nome': nome,
+                'ccusto': ccusto
             };
             
             $.ajax({

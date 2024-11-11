@@ -36,15 +36,14 @@
                 <input type="number" name="n_colaborador" class="form-control" aria-label="Designação" aria-describedby="n_colaborador">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="ccustos">Centro Custo</span>
-                <input type="number" name="ccustos" class="form-control" aria-label="Centro de custos" aria-describedby="ccustos">
-            </div>
-            <div class="input-group">
-                <span class="input-group-text" for="departamento">Departamento</span>
-                <select class="form-select" aria-label="Departamento" name="departamento" id="departamento">
-                    <option selected value="" style='display:none;'>Escolha o departamento</option>
-                <?php while($rowdepart = $sql->fetch_assoc()){?>
-                    <option value="<?php echo $rowdepart['id_departamento']?>"><?php echo $rowdepart['nome']?></option>
+                <span class="input-group-text" for="ccusto">Centro de custo</span>
+                <select class="form-select" aria-label="Centro de custo" name="ccusto" id="ccusto">
+                <?php while($rowdepart = $sql->fetch_assoc()){
+                    $id_departamento = $rowdepart['id_departamento'];
+                    $nome = $rowdepart['nome'];
+                    $ccusto = $rowdepart['centro_custo'];
+                    ?>
+                    <option <?php if($id_departamento=$userdep){echo 'selected';}?> value="<?php echo $id_departamento?>"><?php echo $ccusto.' | '.$nome?></option>
                 <?php } ?>
                 </select>
             </div>

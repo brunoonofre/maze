@@ -8,8 +8,9 @@
     $n_colaborador = filter_input(INPUT_POST, 'n_colaborador', FILTER_DEFAULT);
     $email = filter_input(INPUT_POST, 'email', FILTER_DEFAULT);
     $estatuto = filter_input(INPUT_POST, 'estatuto', FILTER_DEFAULT);
+    $departamento = filter_input(INPUT_POST, 'departamento', FILTER_SANITIZE_NUMBER_INT);
         
-    $edit = $mysqli->query("UPDATE utilizadores SET nome = '".$nome."', n_colaborador = '".$n_colaborador."', email = '".$email."', cat = '".$estatuto."' WHERE id_utilizador = '".$id_utilizador."'");
+    $edit = $mysqli->query("UPDATE utilizadores SET nome = '".$nome."', n_colaborador = '".$n_colaborador."', email = '".$email."', cat = '".$estatuto."', departamento = '".$departamento."' WHERE id_utilizador = '".$id_utilizador."'");
     
     if($edit){
         $output = json_encode(array('success' => true, 'text' => 'Dados editados com sucesso!'));

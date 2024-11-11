@@ -22,6 +22,7 @@ $(function(){
         var n_colaborador = $("input[name=n_colaborador]").val();
         var email = $("input[name=email]").val();
         var estatuto = $("select[name=estatuto]").val();
+        var departamento = $("select[name=departamento]").val();
         var id_utilizador = $("input[name=id_utilizador]").val();
         var redirpage = $("input[name=redirpage]").val();
        
@@ -37,6 +38,7 @@ $(function(){
                 'n_colaborador': n_colaborador,
                 'email': email,
                 'estatuto': estatuto,
+                'departamento': departamento,
                 'id_utilizador': id_utilizador
             };
             

@@ -20,8 +20,9 @@ $(function(){
         
         var id_departamento = $("input[name=id_departamento]").val();
         var nome = $("input[name=nome]").val();
+        var ccusto = $("input[name=ccusto]").val();
        
-        if (nome == ""){
+        if (nome == "" || ccusto == ""){
             errordiv.slideDown();
             errormsg.html("Deve preencher todos os campos!");
             return false;
@@ -30,7 +31,8 @@ $(function(){
 
             post_data = {
                 'id_departamento': id_departamento,
-                'nome': nome
+                'nome': nome,
+                'ccusto': ccusto
             };
             
             $.ajax({

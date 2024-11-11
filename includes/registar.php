@@ -12,6 +12,7 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     $win_user = shell_exec("wmic computersystem get username");
     $bosch_user = trim($win_user, "UserName \r\nEMEA\\");
     $cat = 0;
+    $departamento = filter_input(INPUT_POST, 'departamento', FILTER_SANITIZE_NUMBER_INT);
 
     //Sanitize and validate email passed in
     if(isset($_POST['email'])){
@@ -51,8 +52,8 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     if (empty($error_msg)) {
 
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO utilizadores (nome, cat, win_user, n_colaborador, email) VALUES (?, ?, ?, ?, ?)")) {
-            $insert_stmt->bind_param('sssss', $nome, $cat, $bosch_user, $n_colaborador, $email);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO utilizadores (nome, cat, win_user, n_colaborador, email, departamento) VALUES (?, ?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('sisisi', $nome, $cat, $bosch_user, $n_colaborador, $email, $departamento);
             // Execute the prepared query.
             if (!$insert_stmt->execute()) {
                 $output = json_encode(array('success' => false, 'type' => 'email', 'text' => 'Ocorreu um erro no registo!'));

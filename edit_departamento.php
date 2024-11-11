@@ -10,6 +10,7 @@
     $rowdepart = $sql->fetch_assoc();
 
     $nome = $rowdepart['nome'];
+    $ccusto = $rowdepart['centro_custo'];
     
 ?>
 <script type="text/JavaScript" src="js/edit_departamento.js"></script>
@@ -30,6 +31,10 @@
             <div class="input-group">
                 <span class="input-group-text" id="nome">Nome</span>
                 <input type="text" name="nome" value="<?php echo $nome;?>" class="form-control" aria-label="Nome" aria-describedby="nome">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="ccusto">Centro de custo</span>
+                <input type="number" name="ccusto" value="<?php echo $ccusto;?>" class="form-control" aria-label="Centro de custo" aria-describedby="ccusto">
             </div>
             <input type="hidden" name="id_departamento" value="<?php echo $id_departamento;?>">
             <p class="lead" style="text-align:center">

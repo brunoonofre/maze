@@ -21,6 +21,7 @@
 
             $username = $rowuser['nome'];
             $cat = $rowuser['cat']*1;
+            $userdep = $rowuser['departamento'];
         }else{
             header('Location: includes/login.php');
             $log = "out";
