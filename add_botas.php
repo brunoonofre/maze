@@ -1,8 +1,4 @@
 <?php    
-    if($cat==0){
-        header('Location: ../maze');
-    }
-
     $sql = $mysqli->query("SELECT * FROM departamentos");
 ?>
 <script type="text/JavaScript" src="js/add_botas.js"></script>
@@ -29,11 +25,11 @@
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="nome">Nome</span>
-                <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome">
+                <input type="text" name="nome" class="form-control" aria-label="Nome" aria-describedby="nome" value="<?php echo $username;?>">
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="n_colaborador">Número Colaborador</span>
-                <input type="number" name="n_colaborador" class="form-control" aria-label="Designação" aria-describedby="n_colaborador">
+                <input type="number" name="n_colaborador" class="form-control" aria-label="Designação" aria-describedby="n_colaborador" value="<?php echo $usern;?>">
             </div>
             <div class="input-group">
                 <span class="input-group-text" for="ccusto">Centro de custo</span>

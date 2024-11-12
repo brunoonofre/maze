@@ -43,7 +43,6 @@ $(function(){
                 'nome': nome,
                 'n_colaborador': n_colaborador,
                 'ccusto': ccusto,
-                'departamento': departamento,
                 'tamanho': tamanho,
                 'cor': cor,
                 'quantidade': quantidade,
