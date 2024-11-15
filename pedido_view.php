@@ -44,7 +44,7 @@
     </div>
     <div class="row">
         <?php if($notas->num_rows == 0){echo '<div class="col-md-3"></div>';} ?>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div id="successdiv" class="alert alert-success">
                 <strong id="success"></strong>
             </div>

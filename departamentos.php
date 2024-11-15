@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <p class="lead"><a href="adddepartamento"><button type="button" class="btn btn-primary">Adicionar Departamento</button></a></p>
             <table class="table table-striped table-hover">
                 <thead>
