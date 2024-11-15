@@ -38,6 +38,7 @@
                         <li><a class="dropdown-item" href="guser">Utilizadores</a></li>
                         <li><a class="dropdown-item" href="departamento">Departamentos</a></li>
                         <li><a class="dropdown-item" href="linha">Linhas</a></li>
+                        <li><a class="dropdown-item" href="equipamento">Equipamentos</a></li>
                         <li><a class="dropdown-item" href="materia">Materiais</a></li>
                     </ul>
                 </li>

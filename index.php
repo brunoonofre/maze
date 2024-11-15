@@ -196,6 +196,27 @@
                             echo $noauth;
                         }
                         break;
+                    case 'equipamento':
+                        if($cat==3){
+                            include 'equipamentos.php';
+                        }else{
+                            echo $noauth;
+                        }
+                        break;
+                    case 'addequipamento':
+                        if($cat==3){
+                            include 'add_equipamento.php';
+                        }else{
+                            echo $noauth;
+                        }
+                        break;
+                    case 'editequipamento':
+                        if($cat==3){
+                            include 'edit_equipamento.php';
+                        }else{
+                            echo $noauth;
+                        }
+                        break;
                     }
             ?>
         </section>
