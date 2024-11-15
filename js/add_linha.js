@@ -18,7 +18,7 @@ $(function(){
     
     button.click(function(){
         
-        if($('input[name=nome]').val() == '' ||$('input[name=ccustos]').val() == '' ||$('input[name=io]').val() == ''){
+        if($('input[name=nome]').val() == '' ||$('select[name=departamento]').val() == '' ||$('input[name=io_consumo]').val() == '' ||$('input[name=io_moe]').val() == '' ||$('input[name=io_mfe]').val() == ''){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
@@ -26,13 +26,23 @@ $(function(){
         }else{
 
             var nome = $('input[name=nome]').val();
-            var ccustos = $('input[name=ccustos]').val();
-            var io = $('input[name=io]').val();
+            var departamento = $('select[name=departamento]').val();
+            var io_consumo = $('input[name=io_consumo]').val();
+            var io_moe = $('input[name=io_moe]').val();
+            var io_mfe = $('input[name=io_mfe]').val();
+            var equipamentos = $('input[name=equipamentos]:checked').val();
+
+            if(equipamentos!=1){
+                equipamentos = 0;
+            }
             
             post_data = {
                 'nome': nome,
-                'ccustos': ccustos,
-                'io': io
+                'departamento': departamento,
+                'io_consumo': io_consumo,
+                'io_moe': io_moe,
+                'io_mfe': io_mfe,
+                'equipamentos': equipamentos
             };
             
             $.ajax({

@@ -1,5 +1,6 @@
 $(function(){
    
+
     var button = $("#editlinhabtn");
     var successdiv = $("#successdiv");
     var errordiv = $("#errordiv");
@@ -8,6 +9,8 @@ $(function(){
     
     successdiv.hide();
     errordiv.hide();
+
+
     
     $(".form-group").keypress(function(event){
         if(event.which==13){
@@ -15,21 +18,22 @@ $(function(){
         } 
         
     });
-
-    let matlinha = <?php print(json_encode($matlinha)); ?>+"";
-    var matlinhaarr = matlinha.split(",");
-    $.each(matlinhaarr,function(i){
-        $( "input#"+matlinhaarr[i] ).prop( "checked", true );
-    });
     
     button.click(function(){
         
         var nome = $("input[name=nome]").val();
-        var ccustos = $("input[name=ccustos]").val();
-        var io = $("input[name=io]").val();
+        var departamento = $("select[name=departamento]").val();
+        var io_consumo = $("input[name=io_consumo]").val();
+        var io_moe = $("input[name=io_moe]").val();
+        var io_mfe = $("input[name=io_mfe]").val();
         var id_linha = $("input[name=id_linha]").val();
+        var equipamentos = $('input[name=equipamentos]:checked').val();
 
-        $('input[type=checkbox]').each(function(){
+        if(equipamentos!=1){
+            equipamentos = 0;
+        }
+
+        $('input[type=checkbox]').not("input[name=equipamentos]").each(function(){
 
             var id = $(this).val();
             
@@ -54,7 +58,7 @@ $(function(){
 
         });
        
-        if (nome == "" || ccustos == "" || io == ""){
+        if (nome == "" || departamento == "" || io_consumo == "" || io_moe == "" || io_mfe == ""){
             errordiv.slideDown();
             errormsg.html("Deve preencher todos os campos!");
             return false;
@@ -63,9 +67,12 @@ $(function(){
 
             post_data = {
                 'nome': nome,
-                'ccustos': ccustos,
-                'io': io,
-                'id_linha': id_linha
+                'departamento': departamento,
+                'io_consumo': io_consumo,
+                'io_moe': io_moe,
+                'io_mfe': io_mfe,
+                'id_linha': id_linha,
+                'equipamentos': equipamentos
             };
             
             $.ajax({

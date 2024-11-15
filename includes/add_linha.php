@@ -5,10 +5,13 @@
     sec_session_start();
     
     $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
-    $ccustos = filter_input(INPUT_POST, 'ccustos', FILTER_SANITIZE_NUMBER_INT);
-    $io = filter_input(INPUT_POST, 'io', FILTER_SANITIZE_NUMBER_INT);
+    $departamento = filter_input(INPUT_POST, 'departamento', FILTER_SANITIZE_NUMBER_INT);
+    $io_consumo = filter_input(INPUT_POST, 'io_consumo', FILTER_SANITIZE_NUMBER_INT);
+    $io_moe = filter_input(INPUT_POST, 'io_moe', FILTER_SANITIZE_NUMBER_INT);
+    $io_mfe = filter_input(INPUT_POST, 'io_mfe', FILTER_SANITIZE_NUMBER_INT);
+    $equipamentos = filter_input(INPUT_POST, 'equipamentos', FILTER_SANITIZE_NUMBER_INT);
     
-    $submit = $mysqli->query("INSERT INTO linhas (nome, centro_custos, internal_order) VALUES ('$nome','$ccustos','$io')"); 
+    $submit = $mysqli->query("INSERT INTO linhas (nome, departamento, io_consumo, io_moe, io_mfe, equipamentos) VALUES ('$nome','$departamento','$io_consumo','$io_moe','$io_mfe','$equipamentos')"); 
     
     if($submit){
         $output = json_encode(array('success' => true, 'text' => 'Linha registada!'));

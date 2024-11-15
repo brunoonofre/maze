@@ -1,7 +1,16 @@
 <?php
 
     if($cat == 3){
-        $sql = $mysqli->query("SELECT * FROM linhas");
+        $sql = $mysqli->query("SELECT l.id_linha as id_linha,
+    l.nome as nome,
+    d.nome as departamento,
+    l.io_consumo as io_consumo,
+    l.io_moe as io_moe,
+    l.io_mfe as io_mfe,
+    l.equipamentos as equipamentos
+    FROM linhas l
+    INNER JOIN departamentos d
+    ON d.id_departamento = l.departamento");
     }else{
         header('Location: ../maze');
     }
@@ -15,15 +24,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <p class="lead"><a href="addlinha"><button type="button" class="btn btn-primary">Adicionar linha</button></a></p>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Linha</th>
-                        <th>Centro Custos</th>
-                        <th>Internal Order</th>
+                        <th>Departamento</th>
+                        <th>Internal Order Consumiveis</th>
+                        <th>Internal Order MOE</th>
+                        <th>Internal Order MFE</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -31,13 +41,18 @@
                     while($rowlinha = $sql->fetch_array()){
                         $id_linha = $rowlinha['id_linha'];
                         $nome = $rowlinha['nome'];
-                        $ccustos = $rowlinha['centro_custos'];
-                        $io = $rowlinha['internal_order'];
+                        $departamento = $rowlinha['departamento'];
+                        $ioconsumo = $rowlinha['io_consumo'];
+                        $iomoe = $rowlinha['io_moe'];
+                        $iomfe = $rowlinha['io_mfe'];
+
                 ?>
                     <tr>
                         <td id="<?php echo $id_linha;?>"><?php echo $nome;?></td>
-                        <td id="<?php echo $id_linha;?>"><?php echo $ccustos;?></td>
-                        <td id="<?php echo $id_linha;?>"><?php echo $io;?></td>
+                        <td id="<?php echo $id_linha;?>"><?php echo $departamento;?></td>
+                        <td id="<?php echo $id_linha;?>"><?php echo $ioconsumo;?></td>
+                        <td id="<?php echo $id_linha;?>"><?php echo $iomoe;?></td>
+                        <td id="<?php echo $id_linha;?>"><?php echo $iomfe;?></td>
                         <td class="edit">
                             <span style="cursor: pointer;"
                                     id="<?php echo $id_linha; ?>" 

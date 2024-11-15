@@ -5,10 +5,13 @@
     
     $id_linha = filter_input(INPUT_POST, 'id_linha', FILTER_DEFAULT);
     $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
-    $ccustos = filter_input(INPUT_POST, 'ccustos', FILTER_DEFAULT);
-    $io = filter_input(INPUT_POST, 'io', FILTER_DEFAULT);
+    $departamento = filter_input(INPUT_POST, 'departamento', FILTER_DEFAULT);
+    $io_consumo = filter_input(INPUT_POST, 'io_consumo', FILTER_DEFAULT);
+    $io_moe = filter_input(INPUT_POST, 'io_moe', FILTER_DEFAULT);
+    $io_mfe = filter_input(INPUT_POST, 'io_mfe', FILTER_DEFAULT);
+    $equipamentos = filter_input(INPUT_POST, 'equipamentos', FILTER_DEFAULT);
         
-    $edit = $mysqli->query("UPDATE linhas SET nome = '".$nome."', centro_custos = '".$ccustos."', internal_order = '".$io."' WHERE id_linha = '".$id_linha."'");
+    $edit = $mysqli->query("UPDATE linhas SET nome = '".$nome."', departamento = '".$departamento."', io_consumo = '".$io_consumo."', io_moe = '".$io_moe."', io_mfe = '".$io_mfe."', equipamentos = '".$equipamentos."' WHERE id_linha = '".$id_linha."'");
     
     if($edit){
         $output = json_encode(array('success' => true, 'text' => 'Dados editados com sucesso!'));
