@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <p class="lead"><a href="addlinha"><button type="button" class="btn btn-primary">Adicionar equipamento</button></a></p>
+            <p class="lead"><a href="addequipamento"><button type="button" class="btn btn-primary">Adicionar equipamento</button></a></p>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
