@@ -6,7 +6,7 @@
     $sql = $mysqli->query("SELECT * FROM departamentos");
     
 ?>
-<script type="text/JavaScript" src="js/saidas.js"></script>
+<script type="text/JavaScript" src="js/add_saida.js"></script>
 <div class="container">
     <div class="row">
         <div class="col">
