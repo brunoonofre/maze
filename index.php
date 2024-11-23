@@ -217,8 +217,12 @@
                             echo $noauth;
                         }
                         break;
+                    case 'saida':
+                        include 'saidas.php';
+                        break;
                     case 'addsaida':
                         include 'add_saida.php';
+                        break;
                     }
             ?>
         </section>

@@ -40,6 +40,7 @@
                         <li><a class="dropdown-item" href="linha">Linhas</a></li>
                         <li><a class="dropdown-item" href="equipamento">Equipamentos</a></li>
                         <li><a class="dropdown-item" href="materia">Materiais</a></li>
+                        <li><a class="dropdown-item" href="saida">Saidas</a></li>
                     </ul>
                 </li>
                 <?php }else{ ?>
