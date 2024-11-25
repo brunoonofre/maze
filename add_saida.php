@@ -46,10 +46,41 @@
                 <input type="radio" class="btn-check" name="tipo" id="tipo4" autocomplete="off" value="dpt">
                 <label class="btn btn-outline-primary" for="tipo4">Departamento</label>
             </div>
+            <div id="moeselect">
+                <div class="input-group">
+                    <input type="radio" class="btn-check" name="moe" id="moe1" autocomplete="off" value="moe1">
+                    <label class="btn btn-outline-primary admissao" for="moe1">SMT</label>
+
+                    <input type="radio" class="btn-check" name="moe" id="moe2" autocomplete="off" value="moe2">
+                    <label class="btn btn-outline-primary" for="moe2">VS</label>
+
+                    <input type="radio" class="btn-check" name="moe" id="moe3" autocomplete="off" value="moe3">
+                    <label class="btn btn-outline-primary" for="moe3">CSI</label>
+
+                    <input type="radio" class="btn-check" name="moe" id="moe4" autocomplete="off" value="moe4">
+                    <label class="btn btn-outline-primary" for="moe4">CM</label>
+                </div>
+            </div>
             <div id="ioselect"></div>
             <p class="lead" style="text-align:center">
                 <button id="saidabtn" style="text-align:center" type="button" class="btn btn-primary">Registar saida</button>
             </p>
         </div>
     </div>
+</div>
+<div class="modal fade" id="outmodal" tabindex="-1" aria-labelledby="outconfirmh" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="outconfirmh">Saida de Material</h5>
+        </div>
+        <div class="modal-body">
+            Saida de material registada com sucesso!
+        </div>
+        <div class="modal-footer">
+            <button type="button" id="addoutbtn" class="btn btn-primary">Registar+</button>
+            <button type="button" id="sairbtn" class="btn btn-secondary">Sair</button>
+        </div>
+    </div>
+  </div>
 </div>

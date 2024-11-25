@@ -6,8 +6,14 @@
 
     $tipo = filter_input(INPUT_POST, 'tipo', FILTER_DEFAULT);
     
+    if(isset($_POST['moe'])){
+        $moe = filter_input(INPUT_POST, 'moe', FILTER_DEFAULT);
+        $sqllinha = $mysqli->query("SELECT * FROM linhas WHERE moe = '".$moe."'");
+    }else{
+        $sqllinha = $mysqli->query("SELECT * FROM linhas");
+    }
+    
     $sqldepartamento = $mysqli->query("SELECT * FROM departamentos");
-    $sqllinha = $mysqli->query("SELECT * FROM linhas");
 
     if($tipo=='dpt'){
 ?>

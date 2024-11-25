@@ -49,10 +49,23 @@
                 <span class="input-group-text" id="io_mfe">Internal Order MFE</span>
                 <input type="number" name="io_mfe" class="form-control" aria-label="Iternal Order MOE" aria-describedby="io_mfe">
             </div>
-            <div class="input-group mb-3">
-            <div class="input-group-text">
-                <input class="form-check-input mt-0" type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">
+            <div class="input-group">
+                <input type="radio" class="btn-check" name="moe" id="moe1" autocomplete="off" value="moe1">
+                <label class="btn btn-outline-primary admissao" for="moe1">SMT</label>
+
+                <input type="radio" class="btn-check" name="moe" id="moe2" autocomplete="off" value="moe2">
+                <label class="btn btn-outline-primary" for="moe2">VS</label>
+
+                <input type="radio" class="btn-check" name="moe" id="moe3" autocomplete="off" value="moe3">
+                <label class="btn btn-outline-primary" for="moe3">CSI</label>
+
+                <input type="radio" class="btn-check" name="moe" id="moe4" autocomplete="off" value="moe4">
+                <label class="btn btn-outline-primary" for="moe4">CM</label>
             </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">
+                </div>
                 <input type="text" disabled class="form-control" Placeholder="Pretende estruturar esta linha por equipamentos?" aria-label="Equipamentos?">
             </div>
             <p class="lead" style="text-align:center">

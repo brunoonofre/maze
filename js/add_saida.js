@@ -4,15 +4,33 @@ $(function(){
     var error = $("#error");
     var successdiv = $("#successdiv");
     var success = $("#success");
-    var button = $("#saidabtn");
+    const button = $("#saidabtn");
+    const outmodal = $('#outmodal');
+    const addoutbtn = $('#addoutbtn');
+    const sairbtn = $('#sairbtn');
     
     errordiv.hide();
     successdiv.hide();
+    $("#moeselect").hide();
+    $('input[name=utilizador]').focus();
 
     $("input[name=tipo]").on('change',function(){
         var tipo = $('input[name=tipo]:checked').val();
-        $("#ioselect").load("query_ioselect.php", {'tipo': tipo});
+        if(tipo=='dpt'){
+            $("#ioselect").load("query_ioselect.php", {'tipo': tipo});
+            $("#moeselect").hide();
+            $('input[name=moe]').prop('checked', false);
+        }else{
+            $("#moeselect").show();
+            $("#ioselect").empty();
+        }
     });
+    
+    $("input[name=moe]").on('change',function(){
+        var tipo = $('input[name=tipo]:checked').val();
+        var moe = $('input[name=moe]:checked').val();
+        $("#ioselect").load("query_ioselect.php", {'tipo': tipo, 'moe': moe});
+    })
     
     $("input").keypress(function(event){
         if(event.which==13){
@@ -20,8 +38,31 @@ $(function(){
         } 
         
     });
+
+    addoutbtn.click(function(){
+        $("#ioselect").empty();
+        $('input[name=tipo]').prop('checked', false);
+        $('input[name=pn]').val('');
+        $('input[name=qty]').val('');
+        outmodal.modal('hide');
+        $('input[name=pn]').focus();
+    });
+    
+    sairbtn.click(function(){
+        $("#ioselect").empty();
+        $('input[name=tipo]').prop('checked', false);
+        $('input[name=utilizador]').val('');
+        $('input[name=pn]').val('');
+        $('input[name=qty]').val('');
+        outmodal.modal('hide');
+        $('input[name=utilizador]').focus();
+    });
     
     button.click(function(){
+
+        
+        outmodal.modal('show');
+        return false;
         
         var tipo = $('input[name=tipo]:checked').val();
 
@@ -77,7 +118,7 @@ $(function(){
                         error.html(response.text);
                     }else{
                         errordiv.slideUp();
-                        location = 'saidas';
+                        outmodal.modal('show');
                     }
                 }
             });

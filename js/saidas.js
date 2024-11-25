@@ -1,5 +1,7 @@
 $(function(){
     
+    var button = $("#outputbtn");
+    
     $("span.delete").click(function(){
 
         if(!confirm("Tem a certeza que pretende eliminar este registo?")){
@@ -25,6 +27,25 @@ $(function(){
                     alert("Ocorreu um erro inesperado!")
                 }else{
                     $("#"+id).parent().slideUp();
+                }
+            }
+        });
+
+    });
+
+    button.click(function(){
+
+        $.ajax({
+            type: 'post',
+            url: 'includes/registar_saida.php',
+            error: function(xhr, ajaxOptions, thrownError){
+                alert("Error:\n" + thrownError);
+            },
+            success: function(response){
+                if(response.success == false){
+                    alert("Ocorreu um erro inesperado!");
+                }else{
+                    location = 'saida';
                 }
             }
         });
