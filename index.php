@@ -4,6 +4,11 @@
     include_once 'includes/functions.php';
     sec_session_start();
 
+  //  foreach($_SERVER as $key => $value){
+  //      echo '$_SERVER["'.$key.'"] = '.$value."<br />";
+  //      echo getenv("REMOTE_ADDR");
+  //  }
+
     if(isset($_GET['pag'])){
         $pag = filter_input(INPUT_GET, 'pag', FILTER_DEFAULT);
     }else{
@@ -45,20 +50,18 @@
             type="image/x-icon" 
             href="img/favicon.ico">
         <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+            href="css/bootstrap.min.css" 
             rel="stylesheet" 
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
             crossorigin="anonymous">
         <link 
             rel="stylesheet" 
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+            href="fonts/bootstrap-icons.min.css">
         <script
-			src="https://code.jquery.com/jquery-3.7.1.js"
-			integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-			crossorigin="anonymous">
+			src="js/jquery-3.7.1.js">
         </script>
         <script 
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            src="js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
             crossorigin="anonymous">
         </script>

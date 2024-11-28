@@ -6,7 +6,7 @@
     $sqldepartamento = $mysqli->query("SELECT * FROM departamentos");
 ?>
 <script type="text/JavaScript" src="js/add_linha.js"></script>
-<div class="container">
+<div class="container" id="addlinha">
     <div class="row">
         <div class="col">
             <h4 class="display-5 text-center">Adicionar Linha</h4>
@@ -49,19 +49,14 @@
                 <span class="input-group-text" id="io_mfe">Internal Order MFE</span>
                 <input type="number" name="io_mfe" class="form-control" aria-label="Iternal Order MOE" aria-describedby="io_mfe">
             </div>
-            <div class="input-group">
-                <input type="radio" class="btn-check" name="moe" id="moe1" autocomplete="off" value="moe1">
-                <label class="btn btn-outline-primary admissao" for="moe1">SMT</label>
+            <input type="radio" class="btn-check" name="vs" id="vs1" autocomplete="off" value="smt">
+            <label class="btn btn-outline-success" for="vs1">SMT</label>
 
-                <input type="radio" class="btn-check" name="moe" id="moe2" autocomplete="off" value="moe2">
-                <label class="btn btn-outline-primary" for="moe2">VS</label>
+            <input type="radio" class="btn-check" name="vs" id="vs2" autocomplete="off" value="vscsi">
+            <label class="btn btn-outline-success" for="vs2">VS/CSI</label>
 
-                <input type="radio" class="btn-check" name="moe" id="moe3" autocomplete="off" value="moe3">
-                <label class="btn btn-outline-primary" for="moe3">CSI</label>
-
-                <input type="radio" class="btn-check" name="moe" id="moe4" autocomplete="off" value="moe4">
-                <label class="btn btn-outline-primary" for="moe4">CM</label>
-            </div>
+            <input type="radio" class="btn-check" name="vs" id="vs3" autocomplete="off" value="cm">
+            <label class="btn btn-outline-success" for="vs3">CM</label>
             <div class="input-group mb-3">
                 <div class="input-group-text">
                     <input class="form-check-input mt-0" type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">

@@ -11,26 +11,35 @@ $(function(){
     
     errordiv.hide();
     successdiv.hide();
-    $("#moeselect").hide();
+    $("#vsselect").hide();
     $('input[name=utilizador]').focus();
+    window.scrollTo(0, 1);
 
     $("input[name=tipo]").on('change',function(){
         var tipo = $('input[name=tipo]:checked').val();
         if(tipo=='dpt'){
             $("#ioselect").load("query_ioselect.php", {'tipo': tipo});
-            $("#moeselect").hide();
-            $('input[name=moe]').prop('checked', false);
+            $("#vsselect").hide();
+            $('input[name=vs]').prop('checked', false);
         }else{
-            $("#moeselect").show();
+            $("#vsselect").show();
             $("#ioselect").empty();
         }
     });
     
-    $("input[name=moe]").on('change',function(){
+    $("input[name=vs]").on('change',function(){
         var tipo = $('input[name=tipo]:checked').val();
-        var moe = $('input[name=moe]:checked').val();
-        $("#ioselect").load("query_ioselect.php", {'tipo': tipo, 'moe': moe});
+        var vs = $('input[name=vs]:checked').val();
+        $("#ioselect").load("query_ioselect.php", {'tipo': tipo, 'vs': vs});
     })
+
+    $("input[name=utilizador]").on('input', function(){
+        $('input[name=pn]').focus();
+    });
+
+    $("input[name=pn]").on('input', function(){
+        $('input[name=qty]').focus();
+    });
     
     $("input").keypress(function(event){
         if(event.which==13){
@@ -44,6 +53,8 @@ $(function(){
         $('input[name=tipo]').prop('checked', false);
         $('input[name=pn]').val('');
         $('input[name=qty]').val('');
+        $("#vsselect").hide();
+        $('input[name=vs]').prop('checked', false);
         outmodal.modal('hide');
         $('input[name=pn]').focus();
     });
@@ -54,16 +65,14 @@ $(function(){
         $('input[name=utilizador]').val('');
         $('input[name=pn]').val('');
         $('input[name=qty]').val('');
+        $("#vsselect").hide();
+        $('input[name=vs]').prop('checked', false);
         outmodal.modal('hide');
         $('input[name=utilizador]').focus();
     });
     
     button.click(function(){
 
-        
-        outmodal.modal('show');
-        return false;
-        
         var tipo = $('input[name=tipo]:checked').val();
 
         if(tipo=='mfe' || tipo=='cns' || tipo=='dpt'){

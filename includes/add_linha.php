@@ -10,8 +10,9 @@
     $io_moe = filter_input(INPUT_POST, 'io_moe', FILTER_SANITIZE_NUMBER_INT);
     $io_mfe = filter_input(INPUT_POST, 'io_mfe', FILTER_SANITIZE_NUMBER_INT);
     $equipamentos = filter_input(INPUT_POST, 'equipamentos', FILTER_SANITIZE_NUMBER_INT);
+    $vs = filter_input(INPUT_POST, 'vs', FILTER_DEFAULT);
     
-    $submit = $mysqli->query("INSERT INTO linhas (nome, departamento, io_consumo, io_moe, io_mfe, equipamentos) VALUES ('$nome','$departamento','$io_consumo','$io_moe','$io_mfe','$equipamentos')"); 
+    $submit = $mysqli->query("INSERT INTO linhas (nome, departamento, io_consumo, io_moe, io_mfe, equipamentos, vs) VALUES ('$nome','$departamento','$io_consumo','$io_moe','$io_mfe','$equipamentos','$vs')"); 
     
     if($submit){
         $output = json_encode(array('success' => true, 'text' => 'Linha registada!'));

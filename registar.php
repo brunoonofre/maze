@@ -34,7 +34,7 @@
             <div class="input-group">
                 <label class="input-group-text" for="departamento">Departamento</label>
                 <select class="form-select" aria-label="Departamento" name="departamento" id="departamento">
-                    <option selected style='display:none;'>Escolhe um departamento</option>
+                    <option selected disabled style='display:none;'>Escolhe um departamento</option>
                     <?php 
                         while($rowdepartamento = $sqldepartamento->fetch_array()){
                             $id_departamento = $rowdepartamento['id_departamento'];

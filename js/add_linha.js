@@ -18,7 +18,7 @@ $(function(){
     
     button.click(function(){
         
-        if($('input[name=nome]').val() == '' ||$('select[name=departamento]').val() == '' ||$('input[name=io_consumo]').val() == '' ||$('input[name=io_moe]').val() == '' ||$('input[name=io_mfe]').val() == ''){
+        if($('input[name=nome]').val() == '' ||$('select[name=departamento]').val() == '' ||$('input[name=io_consumo]').val() == '' ||$('input[name=io_moe]').val() == '' ||$('input[name=io_mfe]').val() == '' || $('input[name=vs]:checked').val() == null){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
@@ -31,6 +31,7 @@ $(function(){
             var io_moe = $('input[name=io_moe]').val();
             var io_mfe = $('input[name=io_mfe]').val();
             var equipamentos = $('input[name=equipamentos]:checked').val();
+            var vs = $('input[name=vs]:checked').val();
 
             if(equipamentos!=1){
                 equipamentos = 0;
@@ -42,7 +43,8 @@ $(function(){
                 'io_consumo': io_consumo,
                 'io_moe': io_moe,
                 'io_mfe': io_mfe,
-                'equipamentos': equipamentos
+                'equipamentos': equipamentos,
+                'vs': vs
             };
             
             $.ajax({

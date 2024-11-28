@@ -6,9 +6,9 @@
 
     $tipo = filter_input(INPUT_POST, 'tipo', FILTER_DEFAULT);
     
-    if(isset($_POST['moe'])){
-        $moe = filter_input(INPUT_POST, 'moe', FILTER_DEFAULT);
-        $sqllinha = $mysqli->query("SELECT * FROM linhas WHERE moe = '".$moe."'");
+    if(isset($_POST['vs'])){
+        $vs = filter_input(INPUT_POST, 'vs', FILTER_DEFAULT);
+        $sqllinha = $mysqli->query("SELECT * FROM linhas WHERE vs = '".$vs."'");
     }else{
         $sqllinha = $mysqli->query("SELECT * FROM linhas");
     }
@@ -94,13 +94,11 @@ $(function(){
     <input type="hidden" name="id_linha">
 </div>
 <div id="manutselect">
-    <div class="input-group">
-        <input type="radio" class="btn-check" name="manut" id="manut1" autocomplete="off" value="corr">
-        <label class="btn btn-outline-primary admissao" for="manut1">Correctiva</label>
+    <input type="radio" class="btn-check" name="manut" id="manut1" autocomplete="off" value="corr">
+    <label class="btn btn-outline-warning" for="manut1">Correctiva</label>
 
-        <input type="radio" class="btn-check" name="manut" id="manut2" autocomplete="off" value="prev">
-        <label class="btn btn-outline-primary" for="manut2">Preventiva</label>
-    </div>
+    <input type="radio" class="btn-check" name="manut" id="manut2" autocomplete="off" value="prev">
+    <label class="btn btn-outline-warning" for="manut2">Preventiva</label>
     <div id="equipamentos"></div>
 </div>
 <?php }?>

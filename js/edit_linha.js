@@ -28,6 +28,7 @@ $(function(){
         var io_mfe = $("input[name=io_mfe]").val();
         var id_linha = $("input[name=id_linha]").val();
         var equipamentos = $('input[name=equipamentos]:checked').val();
+        var vs = $('input[name=vs]:checked').val();
 
         if(equipamentos!=1){
             equipamentos = 0;
@@ -58,7 +59,7 @@ $(function(){
 
         });
        
-        if (nome == "" || departamento == "" || io_consumo == "" || io_moe == "" || io_mfe == ""){
+        if (nome == "" || departamento == "" || io_consumo == "" || io_moe == "" || io_mfe == "" || vs == null){
             errordiv.slideDown();
             errormsg.html("Deve preencher todos os campos!");
             return false;
@@ -72,7 +73,8 @@ $(function(){
                 'io_moe': io_moe,
                 'io_mfe': io_mfe,
                 'id_linha': id_linha,
-                'equipamentos': equipamentos
+                'equipamentos': equipamentos,
+                'vs': vs
             };
             
             $.ajax({

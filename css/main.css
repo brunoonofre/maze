@@ -107,3 +107,13 @@ input[type=number] {
   border-top-left-radius: 0.375rem !important;
   border-bottom-left-radius: 0.375rem !important;
 }
+
+#saidas label.btn,
+#addlinha label.btn,
+#editlinha label.btn
+{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

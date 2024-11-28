@@ -18,7 +18,7 @@ $(function(){
     
     button.click(function(){
 
-        if($('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' || $('input[name=email]').val() == ''){
+        if($('input[name=nome]').val() == '' ||$('input[name=n_colaborador]').val() == '' || $('input[name=email]').val() == '' || $('select[name=departamento]').val() == null){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");

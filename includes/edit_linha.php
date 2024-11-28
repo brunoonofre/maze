@@ -10,8 +10,9 @@
     $io_moe = filter_input(INPUT_POST, 'io_moe', FILTER_DEFAULT);
     $io_mfe = filter_input(INPUT_POST, 'io_mfe', FILTER_DEFAULT);
     $equipamentos = filter_input(INPUT_POST, 'equipamentos', FILTER_DEFAULT);
+    $vs = filter_input(INPUT_POST, 'vs', FILTER_DEFAULT);
         
-    $edit = $mysqli->query("UPDATE linhas SET nome = '".$nome."', departamento = '".$departamento."', io_consumo = '".$io_consumo."', io_moe = '".$io_moe."', io_mfe = '".$io_mfe."', equipamentos = '".$equipamentos."' WHERE id_linha = '".$id_linha."'");
+    $edit = $mysqli->query("UPDATE linhas SET nome = '".$nome."', departamento = '".$departamento."', io_consumo = '".$io_consumo."', io_moe = '".$io_moe."', io_mfe = '".$io_mfe."', equipamentos = '".$equipamentos."', vs = '".$vs."' WHERE id_linha = '".$id_linha."'");
     
     if($edit){
         $output = json_encode(array('success' => true, 'text' => 'Dados editados com sucesso!'));

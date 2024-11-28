@@ -39,7 +39,7 @@
                     $nome = $rowdepart['nome'];
                     $ccusto = $rowdepart['centro_custo'];
                     ?>
-                    <option <?php if($id_departamento=$userdep){echo 'selected';}?> value="<?php echo $id_departamento?>"><?php echo $ccusto.' | '.$nome?></option>
+                    <option <?php if($id_departamento==$userdep){echo 'selected';}?> value="<?php echo $id_departamento?>"><?php echo $ccusto.' | '.$nome?></option>
                 <?php } ?>
                 </select>
             </div>

@@ -9,8 +9,7 @@ if (isset($_POST['nome'], $_POST['n_colaborador'])) {
     // Sanitize and validate the data passed in
     $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
     $n_colaborador = filter_input(INPUT_POST, 'n_colaborador', FILTER_DEFAULT);
-    $win_user = shell_exec("wmic computersystem get username");
-    $bosch_user = trim($win_user, "UserName \r\nEMEA\\");
+    $bosch_user = getenv("REMOTE_ADDR");
     $cat = 0;
     $departamento = filter_input(INPUT_POST, 'departamento', FILTER_SANITIZE_NUMBER_INT);
 

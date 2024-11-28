@@ -18,6 +18,7 @@
     $io_moe = $roweditlinha['io_moe'];
     $io_mfe = $roweditlinha['io_mfe'];
     $equipamentos = $roweditlinha['equipamentos'];
+    $vs = $roweditlinha['vs'];
 
     $sqlmatlinha = $mysqli->query("SELECT * FROM material_linha WHERE id_linha =".$id_linha);
     $matlinha = array();
@@ -37,7 +38,7 @@ $(function(){
 
 });
 </script>
-<div class="container">
+<div class="container" id="editlinha">
     <div class="row">
         <div class="col">
             <h4 class="display-5 text-center">Editar Linha</h4>
@@ -79,6 +80,14 @@ $(function(){
                 <span class="input-group-text" id="io_mfe">Internal Order MFE</span>
                 <input type="number" name="io_mfe" value="<?php echo $io_mfe;?>"  class="form-control" aria-label="Iternal Order MOE" aria-describedby="io_mfe">
             </div>
+            <input type="radio" class="btn-check" name="vs" id="vs1" autocomplete="off" value="smt" <?php if($vs=='smt'){echo 'checked';}?>>
+            <label class="btn btn-outline-success" for="vs1">SMT</label>
+
+            <input type="radio" class="btn-check" name="vs" id="vs2" autocomplete="off" value="vscsi" <?php if($vs=='vscsi'){echo 'checked';}?>>
+            <label class="btn btn-outline-success" for="vs2">VS/CSI</label>
+
+            <input type="radio" class="btn-check" name="vs" id="vs3" autocomplete="off" value="cm" <?php if($vs=='cm'){echo 'checked';}?>>
+            <label class="btn btn-outline-success" for="vs3">CM</label>
             <div class="input-group mb-3">
             <div class="input-group-text">
                 <input class="form-check-input mt-0" <?php if($equipamentos==1){echo 'checked';}?> type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">
