@@ -15,10 +15,22 @@ $(function(){
         } 
         
     });
+
+    $("input[name=equipamentos]").on('change',function(){
+        if($("input[name=equipamentos]").is(':checked')){
+            $("input[name=io_moe]").parent().slideUp();
+            $("input[name=io_mfe]").parent().slideUp();
+        }else{
+            $("input[name=io_moe]").parent().slideDown();
+            $("input[name=io_mfe]").parent().slideDown();
+            $("input[name=io_moe]").val('');
+            $("input[name=io_mfe]").val('');
+        }
+    })
     
     button.click(function(){
         
-        if($('input[name=nome]').val() == '' ||$('select[name=departamento]').val() == '' ||$('input[name=io_consumo]').val() == '' ||$('input[name=io_moe]').val() == '' ||$('input[name=io_mfe]').val() == '' || $('input[name=vs]:checked').val() == null){
+        if($('input[name=nome]').val() == '' ||$('select[name=departamento]').val() == '' ||$('input[name=io_consumo]').val() == '' || $('input[name=vs]:checked').val() == null){
             successdiv.slideUp();
             errordiv.slideDown();
             error.html("Deve preencher todos os campos!");
@@ -28,13 +40,16 @@ $(function(){
             var nome = $('input[name=nome]').val();
             var departamento = $('select[name=departamento]').val();
             var io_consumo = $('input[name=io_consumo]').val();
-            var io_moe = $('input[name=io_moe]').val();
-            var io_mfe = $('input[name=io_mfe]').val();
-            var equipamentos = $('input[name=equipamentos]:checked').val();
             var vs = $('input[name=vs]:checked').val();
 
-            if(equipamentos!=1){
+            if($("input[name=equipamentos]").is(':checked')){
+                equipamentos = 1;
+                var io_moe = null;
+                var io_mfe = null;
+            }else{
                 equipamentos = 0;
+                var io_moe = $('input[name=io_moe]').val();
+                var io_mfe = $('input[name=io_mfe]').val();
             }
             
             post_data = {

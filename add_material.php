@@ -30,6 +30,12 @@
                 <span class="input-group-text" id="localizacao">Localização</span>
                 <input type="text" name="localizacao" class="form-control" aria-label="Localização" aria-describedby="localizacao">
             </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name="setup" value="1" aria-label="Material de Setup?">
+                </div>
+                <input type="text" disabled class="form-control" Placeholder="Material de Setup?" aria-label="Material de Setup?">
+            </div>
             <p class="lead" style="text-align:center">
                 <button id="addmatbtn" style="text-align:center" type="button" class="btn btn-primary">Adicionar material</button>
             </p>

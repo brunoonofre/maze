@@ -71,7 +71,7 @@
                     }elseif($estado==3){
                         echo 'table-success';
                     }?>">
-                        <td id="<?php echo $id_pedido;?>"><?php echo date("d/m/Y", $unixData);?></td>
+                        <td id="<?php echo $id_pedido;?>"><?php echo date("d/m/Y h:i:s", $unixData);?></td>
                         <td id="<?php echo $id_pedido;?>"><?php echo $linha;?></td>
                         <td id="<?php echo $id_pedido;?>"><?php echo $utilizador;?></td>
                         <td id="<?php echo $id_pedido;?>">

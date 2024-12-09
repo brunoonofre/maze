@@ -4,13 +4,12 @@
     include_once 'functions.php';
     sec_session_start();
     
-    $id_linha = filter_input(INPUT_POST, 'id_linha', FILTER_DEFAULT);
-    $id_utilizador = filter_input(INPUT_POST, 'id_utilizador', FILTER_DEFAULT);
+    $id_pedido = filter_input(INPUT_POST, 'id_pedido', FILTER_DEFAULT);
+    $io = filter_input(INPUT_POST, 'io', FILTER_DEFAULT);
     $lista = filter_input(INPUT_POST, 'lista', FILTER_DEFAULT);
-    $data = date("Y-m-d h:i:s");
-    $estado = 1;
+    $sap = 0;
     
-    $submit = $mysqli->query("INSERT INTO pedidos (id_utilizador, id_linha, data, lista, estado) VALUES ('$id_utilizador','$id_linha','$data','$lista','$estado')"); 
+    $submit = $mysqli->query("INSERT INTO saida_pedidos (id_pedido, io, lista, sap) VALUES ('$id_pedido','$io','$lista','$sap')"); 
     
     if($submit){
         $output = json_encode(array('success' => true, 'text' => $mysqli->insert_id));

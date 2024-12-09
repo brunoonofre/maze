@@ -11,24 +11,59 @@ $(function(){
     successdiv.hide();
 
     button.click(function(){
+
+        var lista = {};
+        var diff = 0;
+        successdiv.slideUp();
+        errordiv.slideUp();
+        
+        $(':checkbox').each(function(i){
+            var id = $(this).val();
+            if($(this).is(':checked')){
+                var id = $(this).val();
+                var quantidade = $("#"+id).val();                
+                if(quantidade=="" || quantidade==null || quantidade==0){
+                    successdiv.slideUp();
+                    errordiv.slideDown();
+                    error.html("Deve preencher as quantidades nos produtos selecionados!");
+                    return false;
+                }else{
+                    lista[i] = {id,
+                        qty: quantidade};
+                    if(quantidade!=$("input[name=qty"+id+"]").val()){
+                        diff++;
+                    }
+                }
+            }else{
+                var id = $(this).val();
+                var quantidade = 0;
+                lista[i] = {id,
+                    qty: quantidade};
+                diff++;
+            }
+            
+
+
+        });
         
         if(!confirm("Pretende atender este pedido?")){
-            return false;
-        }else if(!confirm("Tem a certeza?")){
             return false;
         }
         
         var id_pedido = $('input[name=id_pedido]').val();
-        
-        post_data = {
+        var io = $('input[name=io]').val();
+        var listaf = JSON.stringify(lista);
+
+        post_lista = {
             'id_pedido': id_pedido,
-            'estado': 3
-        };
-        
+            'io': io,
+            'lista': listaf
+        }
+
         $.ajax({
             type: 'post',
-            url: 'includes/edit_estado.php',
-            data: post_data,
+            url: 'includes/add_saida_pedido.php',
+            data: post_lista,
             dataType: 'json',
             error: function(xhr, ajaxOptions, thrownError){
                 alert("Error:\n" + thrownError);
@@ -40,7 +75,41 @@ $(function(){
                     error.html(response.text);
                 }else{
                     errordiv.slideUp();
-                    location = 'pedido';
+
+                    if(diff==0){
+                        estado = 3;
+                    }else{
+                        estado = 2;
+                    }
+
+                    post_estado = {
+                        'id_pedido': id_pedido,
+                        'estado': estado
+                    };
+
+                    $.ajax({
+                        type: 'post',
+                        url: 'includes/edit_estado.php',
+                        data: post_estado,
+                        dataType: 'json',
+                        error: function(xhr, ajaxOptions, thrownError){
+                            alert("Error:\n" + thrownError);
+                        },
+                        success: function(response){
+                            if(response.success == false){
+                                successdiv.slideUp();
+                                errordiv.slideDown();
+                                error.html(response.text);
+                            }else{
+                                errordiv.slideUp();
+                                if(diff==0){
+                                    location = 'pedido';
+                                }else{
+                                    $('#enviarnota').modal('toggle');
+                                }
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -56,12 +125,10 @@ $(function(){
             return false;
         }
         
-        var succ = 0;
         var id_pedido = $('input[name=id_pedido]').val();
         var id_utilizador = $('input[name=id_utilizador]').val();
         var nota = $('textarea[name=nota]').val();
-        var atp = $('input[name=atp]').val();
-        
+
         post_data = {
             'id_pedido': id_pedido,
             'id_utilizador': id_utilizador,
@@ -81,45 +148,13 @@ $(function(){
                     successdiv.slideUp();
                     errordiv.slideDown();
                     error.html(response.text);
-                    succ = 0;
                 }else{
                     errordiv.slideUp();
-
-                    if(atp==1){
-
-                        post_data2 = {
-                            'id_pedido': id_pedido,
-                            'estado': 2
-                        }
-                        
-                        $.ajax({
-                            type: 'post',
-                            url: 'includes/edit_estado.php',
-                            data: post_data2,
-                            dataType: 'json',
-                            error: function(xhr, ajaxOptions, thrownError){
-                                alert("Error:\n" + thrownError);
-                            },
-                            success: function(response){
-                                if(response.success == false){
-                                    successdiv.slideUp();
-                                    errordiv.slideDown();
-                                    error.html(response.text);
-                                }else{
-                                    errordiv.slideUp();
-                                    successdiv.slideDown();
-                                    success.html("Pedido atendido com sucesso!")
-                                    $('#enviarnota').modal('toggle');
-                                }
-                            }
-                        });
-
-                    }else{
-                        successdiv.slideDown();
-                        success.html("Nota enviada com sucesso!");
-                        $('#enviarnota').modal('toggle');
-                        location = 'pedido';
-                    }
+                    successdiv.slideDown();
+                    success.html("Nota enviada com sucesso!");
+                    $('#enviarnota').modal('toggle');
+                    location = 'pedido';
+                    
                 }
             }
         });

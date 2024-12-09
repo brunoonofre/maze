@@ -13,9 +13,7 @@ $(function(){
 
     $("span.delete").click(function(){
 
-        if(!confirm("Tem a certeza que pretende eliminar esta linha?")){
-            return false;
-        }else if(!confirm("A linha e todos os pedidos relacionados serão apagados! Tem a certeza?")){
+        if(!confirm("A linha e todos os pedidos relacionados serão apagados! Tem a certeza?")){
             return false;
         }
 

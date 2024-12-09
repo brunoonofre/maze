@@ -13,6 +13,7 @@
     $pn = $roweditmaterial['part_number'];
     $descricao = $roweditmaterial['descricao'];
     $localizacao = $roweditmaterial['localizacao'];
+    $setup = $roweditmaterial['setup'];
 ?>
 <script type="text/JavaScript" src="js/edit_material.js"></script>
 <div class="container">
@@ -40,6 +41,12 @@
             <div class="input-group">
                 <span class="input-group-text" id="localizacao">Localização</span>
                 <input type="text" name="localizacao" value="<?php echo $localizacao;?>" class="form-control" aria-label="Localização" aria-describedby="io">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" name="setup" value="1" aria-label="Material de Setup?" <?php if($setup==1){echo 'checked';}?>>
+                </div>
+                <input type="text" disabled class="form-control" Placeholder="Material de Setup?" aria-label="Material de Setup?">
             </div>
             <input type="hidden" name="id_material" value="<?php echo $id_material;?>">
             <p class="lead" style="text-align:center">

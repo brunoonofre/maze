@@ -72,7 +72,7 @@ h4
 
 .table-info
 {
-    --bs-table-bg: #674199;
+    --bs-table-bg: #8772a4;
     --bs-table-hover-bg: #7c6e8f;
 }
 
@@ -116,4 +116,19 @@ input[type=number] {
   padding-right: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+
+.iocheck
+{
+  display: inherit;
+}
+
+.iocheck p
+{
+  margin-right: 10px;
+}
+
+table.table
+{
+  margin-bottom: 100px;
 }

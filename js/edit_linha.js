@@ -18,21 +18,29 @@ $(function(){
         } 
         
     });
+
+    if($("input[name=equipamentos]").is(':checked')){
+        $("input[name=io_moe]").parent().slideUp();
+        $("input[name=io_mfe]").parent().slideUp();
+    }
+    
+    $("input[name=equipamentos]").on('change',function(){
+        if($("input[name=equipamentos]").is(':checked')){
+            $("input[name=io_moe]").parent().slideUp();
+            $("input[name=io_mfe]").parent().slideUp();
+        }else{
+            $("input[name=io_moe]").parent().slideDown();
+            $("input[name=io_mfe]").parent().slideDown();
+        }
+    })
     
     button.click(function(){
         
         var nome = $("input[name=nome]").val();
         var departamento = $("select[name=departamento]").val();
         var io_consumo = $("input[name=io_consumo]").val();
-        var io_moe = $("input[name=io_moe]").val();
-        var io_mfe = $("input[name=io_mfe]").val();
         var id_linha = $("input[name=id_linha]").val();
-        var equipamentos = $('input[name=equipamentos]:checked').val();
         var vs = $('input[name=vs]:checked').val();
-
-        if(equipamentos!=1){
-            equipamentos = 0;
-        }
 
         $('input[type=checkbox]').not("input[name=equipamentos]").each(function(){
 
@@ -59,12 +67,22 @@ $(function(){
 
         });
        
-        if (nome == "" || departamento == "" || io_consumo == "" || io_moe == "" || io_mfe == "" || vs == null){
+        if (nome == "" || departamento == "" || io_consumo == "" || vs == null){
             errordiv.slideDown();
             errormsg.html("Deve preencher todos os campos!");
             return false;
         }else{
             errordiv.slideUp();
+
+            if($("input[name=equipamentos]").is(':checked')){
+                equipamentos = 1;
+                var io_moe = null;
+                var io_mfe = null;
+            }else{
+                equipamentos = 0;
+                var io_moe = $('input[name=io_moe]').val();
+                var io_mfe = $('input[name=io_mfe]').val();
+            }
 
             post_data = {
                 'nome': nome,

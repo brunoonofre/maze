@@ -73,12 +73,18 @@ $(function(){
                 <input type="number" name="io_consumo" value="<?php echo $io_consumo;?>" class="form-control" aria-label="Iternal Order Consumiveis" aria-describedby="io_consumo">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="io_moe">Internal Order MOE</span>
-                <input type="number" name="io_moe" value="<?php echo $io_moe;?>"  class="form-control" aria-label="Iternal Order MOE" aria-describedby="io_moe">
+                <span class="input-group-text" id="io_moe">Internal Order Mecânica</span>
+                <input type="number" name="io_moe" value="<?php echo $io_moe;?>"  class="form-control" aria-label="Iternal Order Mecânica" aria-describedby="io_moe">
             </div>
             <div class="input-group">
-                <span class="input-group-text" id="io_mfe">Internal Order MFE</span>
-                <input type="number" name="io_mfe" value="<?php echo $io_mfe;?>"  class="form-control" aria-label="Iternal Order MOE" aria-describedby="io_mfe">
+                <span class="input-group-text" id="io_mfe">Internal Order Testes</span>
+                <input type="number" name="io_mfe" value="<?php echo $io_mfe;?>"  class="form-control" aria-label="Iternal Order Testes" aria-describedby="io_mfe">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" <?php if($equipamentos==1){echo 'checked';}?> type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">
+                </div>
+                    <input type="text" disabled class="form-control" Placeholder="Pretende estruturar esta linha por equipamentos?" aria-label="Equipamentos?">
             </div>
             <input type="radio" class="btn-check" name="vs" id="vs1" autocomplete="off" value="smt" <?php if($vs=='smt'){echo 'checked';}?>>
             <label class="btn btn-outline-success" for="vs1">SMT</label>
@@ -88,12 +94,6 @@ $(function(){
 
             <input type="radio" class="btn-check" name="vs" id="vs3" autocomplete="off" value="cm" <?php if($vs=='cm'){echo 'checked';}?>>
             <label class="btn btn-outline-success" for="vs3">CM</label>
-            <div class="input-group mb-3">
-            <div class="input-group-text">
-                <input class="form-check-input mt-0" <?php if($equipamentos==1){echo 'checked';}?> type="checkbox" name="equipamentos" value="1" aria-label="Equipamentos?">
-            </div>
-                <input type="text" disabled class="form-control" Placeholder="Pretende estruturar esta linha por equipamentos?" aria-label="Equipamentos?">
-            </div>
             <?php
                 while($rowmaterial = $sqlmaterial->fetch_array()){
                     $id_material = $rowmaterial['id_material'];

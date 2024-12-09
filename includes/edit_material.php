@@ -7,8 +7,9 @@
     $pn = filter_input(INPUT_POST, 'pn', FILTER_DEFAULT);
     $descricao = filter_input(INPUT_POST, 'descricao', FILTER_DEFAULT);
     $localizacao = filter_input(INPUT_POST, 'localizacao', FILTER_DEFAULT);
+    $setup = filter_input(INPUT_POST, 'setup', FILTER_DEFAULT);
         
-    $edit = $mysqli->query("UPDATE materiais SET part_number = '".$pn."', descricao = '".$descricao."', localizacao = '".$localizacao."' WHERE id_material = '".$id_material."'");
+    $edit = $mysqli->query("UPDATE materiais SET part_number = '".$pn."', descricao = '".$descricao."', localizacao = '".$localizacao."', setup = '".$setup."' WHERE id_material = '".$id_material."'");
     
     if($edit){
         $output = json_encode(array('success' => true, 'text' => 'Dados editados com sucesso!'));

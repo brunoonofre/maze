@@ -29,27 +29,47 @@
                         <li><a class="dropdown-item" href="addbotas">Calçado</a></li>
                     </ul>
                 </li>
+                <?php if($cat>=3){?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Saidas</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item <?php if($pag == 'saida'){echo 'active" aria-current="page"';} ?>" href="saida">Maze</a></li>
+                        <li><a class="dropdown-item <?php if($pag == 'baixapedidos'){echo 'active" aria-current="page"';} ?>" href="baixapedidos">Abastecimento</a></li>
+                    </ul>
+                </li>
+                <?php }?>
             </ul>
             <ul class="d-flex navbar-nav">
-                <?php if($cat==3){?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill"></i> <?php echo $username;?></a>
                     <ul class="dropdown-menu">
+                        <?php if($cat==3){?>
                         <li><a class="dropdown-item" href="guser">Utilizadores</a></li>
                         <li><a class="dropdown-item" href="departamento">Departamentos</a></li>
                         <li><a class="dropdown-item" href="linha">Linhas</a></li>
                         <li><a class="dropdown-item" href="equipamento">Equipamentos</a></li>
                         <li><a class="dropdown-item" href="materia">Materiais</a></li>
-                        <li><a class="dropdown-item" href="saida">Saidas</a></li>
+                        <?php }else{ ?>
+                        <li><a class="dropdown-item" href="guser">Perfil</a></li>
+                        <?php } ?>
+                        <li><a class="dropdown-item" href="includes/logout.php">Logout</a></li>
                     </ul>
                 </li>
-                <?php }else{ ?>
-                <li class="nav-item">
-                    <a class="nav-link <?php if($pag == 'puser'){echo 'active" aria-current="page"';} ?>" href="puser"><i class="bi bi-person-fill"></i>  <?php echo $username;?></a>
-                </li>
-                <?php } ?>
             </ul>
         </div>
-        <?php }?>
+        <?php }else{?>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <ul class="d-flex navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($pag == 'regist'){echo 'active" aria-current="page"';} ?>" href="regist"><i class="bi bi-person-plus-fill"></i> Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($pag == 'log'){echo 'active" aria-current="page"';} ?>" href="log"><i class="bi bi-door-open-fill"></i> Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        <?php } ?>
     </div>
 </nav>

@@ -32,8 +32,8 @@
                         <th>Linha</th>
                         <th>Departamento</th>
                         <th>Internal Order Consumiveis</th>
-                        <th>Internal Order MOE</th>
-                        <th>Internal Order MFE</th>
+                        <th>Internal Order Mecânica</th>
+                        <th>Internal Order Testes</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">

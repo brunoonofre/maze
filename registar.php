@@ -1,6 +1,7 @@
 <?php    
     $sqldepartamento = $mysqli->query("SELECT * FROM departamentos");
 ?>
+<script type="text/JavaScript" src="js/sha512.js"></script>
 <script type="text/JavaScript" src="js/registar.js"></script>
 <div class="container">
     <div class="row">
@@ -13,9 +14,6 @@
             <p class="lead" style="text-align:center">
                 Bem Vindo! Efectua o registo para usares o Maze Digital!
             </p>
-            <div id="successdiv" class="alert alert-success">
-                <strong id="success"></strong>
-            </div>
             <div id="errordiv" class="alert alert-danger">
                 <strong id="error"></strong>
             </div>  
@@ -45,7 +43,14 @@
                     <?php } ?>
                 </select>
             </div>
-            <input type="hidden" name="id_utilizador">
+            <div class="input-group">
+                <span class="input-group-text" id="password">Password</span>
+                <input type="password" name="password" class="form-control" aria-label="Password" aria-describedby="password">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text" id="confirmpw">Confirmar Password</span>
+                <input type="password" name="confirmpw" class="form-control" aria-label="Confirmar Password" aria-describedby="confirmpw">
+            </div>
             <p class="lead" style="text-align:center">
                 <button id="registerbtn" style="text-align:center" type="button" class="btn btn-primary">Registar</button>
             </p>

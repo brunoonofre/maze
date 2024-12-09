@@ -29,10 +29,17 @@ $(function(){
             var descricao = $('input[name=descricao]').val();
             var localizacao = $('input[name=localizacao]').val();
             
+            if($("input[name=setup]").is(':checked')){
+                var setup = 1;
+            }else{
+                var setup = 0;
+            }
+
             post_data = {
                 'pn': pn,
                 'descricao': descricao,
-                'localizacao': localizacao
+                'localizacao': localizacao,
+                'setup': setup
             };
             
             $.ajax({

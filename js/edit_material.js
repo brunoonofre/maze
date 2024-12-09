@@ -29,11 +29,18 @@ $(function(){
             return false;
         }else{
             errordiv.slideUp();
+            
+            if($("input[name=setup]").is(':checked')){
+                var setup = 1;
+            }else{
+                var setup = 0;
+            }
 
             post_data = {
                 'pn': pn,
                 'descricao': descricao,
                 'localizacao': localizacao,
+                'setup': setup,
                 'id_material': id_material
             };
             

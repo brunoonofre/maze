@@ -46,13 +46,16 @@ $(function(){
         
         
         if(matcount == 0 || qtyval == 1 || $('select[name=linha]').val() == ''){ //fazer verificação quantidades
+            errordiv.slideDown();
             error.html("Encontram-se campos necessarios por preencher!");
             return false;
-        }else if($('textarea[name=nota]').val()==''){
-            if(!confirm('Não deixou nenhuma nota. Pretende enviar mesmo assim?')){
-                return false;
+        }else {
+            
+            if($('textarea[name=nota]').val()==''){
+                if(!confirm('Não deixou nenhuma nota. Pretende enviar mesmo assim?')){
+                    return false;
+                }
             }
-        }else{
             
             var id_linha = $('select[name=linha]').val();
             var id_utilizador = $('input[name=id_utilizador]').val();

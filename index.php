@@ -4,36 +4,24 @@
     include_once 'includes/functions.php';
     sec_session_start();
 
-  //  foreach($_SERVER as $key => $value){
-  //      echo '$_SERVER["'.$key.'"] = '.$value."<br />";
-  //      echo getenv("REMOTE_ADDR");
-  //  }
-
     if(isset($_GET['pag'])){
         $pag = filter_input(INPUT_GET, 'pag', FILTER_DEFAULT);
     }else{
         $pag = '';
     }
 
-    if(isset($_GET['noauth'])){
-        $log = "failed";
-        $pag = "noauth";
-    }else{
-        if (login_check($mysqli) == true){
-            $log = "in";
-            $results = $mysqli->query("SELECT * FROM utilizadores WHERE id_utilizador = ".$_SESSION['user_id']);
-            $rowuser = $results->fetch_array();
+    if (login_check($mysqli) == true){
+        $log = "in";
+        $results = $mysqli->query("SELECT * FROM utilizadores WHERE id_utilizador = ".$_SESSION['user_id']);
+        $rowuser = $results->fetch_assoc();
 
-            $username = $rowuser['nome'];
-            $cat = $rowuser['cat']*1;
-            $userdep = $rowuser['departamento'];
-            $usern = $rowuser['n_colaborador'];
-            
-        }else{
-            header('Location: includes/login.php');
-            $log = "out";
-            $pag = "noauth";
-        }
+        $username = $rowuser['nome'];
+        $cat = $rowuser['cat']*1;
+        $userdep = $rowuser['departamento'];
+        $usern = $rowuser['n_colaborador'];
+        
+    }else{
+        $log = "out";
     }   
     
     $noauth = "<h2>Não tem autorização para aceder a esta pagina!</h2>";
@@ -41,7 +29,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Maze</title>
+        <title>Maze Digital</title>
         <meta 
             name="viewport" 
             content="width=device-width, initial-scale=1, user-scalable=no">
@@ -81,7 +69,16 @@
                     case '':
                         include 'home.php';
                         break;
+                    case 'dev':
+                        echo "under_development";
+                        break;
                     case 'noauth':
+                        echo $noauth;
+                        break;
+                    case 'log';
+                        include 'login.php';
+                        break;
+                    case 'regist';
                         include 'registar.php';
                         break;
                     case 'pedido':
@@ -225,6 +222,9 @@
                         break;
                     case 'addsaida':
                         include 'add_saida.php';
+                        break;
+                    case 'baixapedidos':
+                        include 'baixa_pedidos.php';
                         break;
                     }
             ?>
